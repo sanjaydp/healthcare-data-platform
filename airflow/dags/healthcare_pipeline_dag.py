@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 default_args = {
     "owner": "sanjay",
@@ -11,7 +11,7 @@ with DAG(
     dag_id="healthcare_pipeline",
     default_args=default_args,
     start_date=datetime(2026, 3, 25),
-    schedule_interval=None,
+    schedule=None,
     catchup=False,
     tags=["healthcare", "kafka", "snowflake", "dbt"],
 ) as dag:
