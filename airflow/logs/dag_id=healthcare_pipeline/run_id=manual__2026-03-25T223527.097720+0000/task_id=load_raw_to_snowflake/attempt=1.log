@@ -1,0 +1,41 @@
+[2026-03-25T22:35:28.372+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-25T22:35:28.398+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T22:35:27.097720+00:00 [queued]>
+[2026-03-25T22:35:28.411+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T22:35:27.097720+00:00 [queued]>
+[2026-03-25T22:35:28.412+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-25T22:35:28.427+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): load_raw_to_snowflake> on 2026-03-25 22:35:27.097720+00:00
+[2026-03-25T22:35:28.452+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=331) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-25T22:35:28.450+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'load_raw_to_snowflake', 'manual__2026-03-25T22:35:27.097720+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpdyihj0t5']
+[2026-03-25T22:35:28.453+0000] {standard_task_runner.py:72} INFO - Started process 332 to run task
+[2026-03-25T22:35:28.453+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask load_raw_to_snowflake
+[2026-03-25T22:35:28.520+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T22:35:27.097720+00:00 [running]> on host 0b22c2b36099
+[2026-03-25T22:35:28.637+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='load_raw_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-03-25T22:35:27.097720+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-25T22:35:27.097720+00:00'
+[2026-03-25T22:35:28.639+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-25T22:35:28.752+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-25T22:35:28.754+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/project/scripts &&     python load_s3_pyspark_to_snowflake.py\n    ']
+[2026-03-25T22:35:28.777+0000] {subprocess.py:99} INFO - Output:
+[2026-03-25T22:35:52.168+0000] {subprocess.py:106} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2026-03-25T22:35:54.442+0000] {subprocess.py:106} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2026-03-25T22:35:54.443+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-25T22:35:54.443+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-25T22:35:55.218+0000] {subprocess.py:106} INFO - 26/03/25 22:35:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-25T22:36:03.984+0000] {subprocess.py:106} INFO - 26/03/25 22:36:03 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2026-03-25T22:36:05.492+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmppjgjfcuj/clean/patients
+[2026-03-25T22:36:05.492+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmppjgjfcuj/clean/encounters
+[2026-03-25T22:36:05.493+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmppjgjfcuj/clean/conditions
+[2026-03-25T22:36:05.493+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmppjgjfcuj/clean/observations
+[2026-03-25T22:36:13.779+0000] {subprocess.py:106} INFO - Great Expectations validation passed for all datasets.
+[2026-03-25T22:40:14.033+0000] {subprocess.py:106} INFO - Downloading s3://healthcare-synthea/raw/patients/patients.csv -> /tmp/tmppjgjfcuj/raw/patients.csv
+[2026-03-25T22:40:14.057+0000] {subprocess.py:106} INFO - Downloading s3://healthcare-synthea/raw/encounters/encounters.csv -> /tmp/tmppjgjfcuj/raw/encounters.csv
+[2026-03-25T22:40:14.058+0000] {subprocess.py:106} INFO - Downloading s3://healthcare-synthea/raw/conditions/conditions.csv -> /tmp/tmppjgjfcuj/raw/conditions.csv
+[2026-03-25T22:40:14.059+0000] {subprocess.py:106} INFO - Downloading s3://healthcare-synthea/raw/observations/observations.csv -> /tmp/tmppjgjfcuj/raw/observations.csv
+[2026-03-25T22:40:14.059+0000] {subprocess.py:106} INFO - Loaded 229 rows into HC_DB.RAW.PATIENTS
+[2026-03-25T22:40:14.060+0000] {subprocess.py:106} INFO - Loaded 16931 rows into HC_DB.RAW.ENCOUNTERS
+[2026-03-25T22:40:14.060+0000] {subprocess.py:106} INFO - Loaded 8266 rows into HC_DB.RAW.CONDITIONS
+[2026-03-25T22:40:14.061+0000] {subprocess.py:106} INFO - Loaded 183334 rows into HC_DB.RAW.OBSERVATIONS
+[2026-03-25T22:40:14.061+0000] {subprocess.py:106} INFO - S3 -> PySpark -> Snowflake completed successfully.
+[2026-03-25T22:40:14.862+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-25T22:40:15.032+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-25T22:40:15.038+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=load_raw_to_snowflake, run_id=manual__2026-03-25T22:35:27.097720+00:00, execution_date=20260325T223527, start_date=20260325T223528, end_date=20260325T224015
+[2026-03-25T22:40:15.911+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-25T22:40:15.985+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-25T22:40:15.988+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,14 @@
+healthcare_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: aoc68017.us-east-1
+      user: SanjayDP135
+      password: "24Cwe:cJMZW9wN."
+      role: ACCOUNTADMIN
+      database: HC_DB
+      warehouse: COMPUTE_WH
+      schema: RAW
+      threads: 4
+      client_session_keep_alive: false

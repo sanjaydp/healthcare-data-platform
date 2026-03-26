@@ -1,0 +1,55 @@
+[2026-03-25T21:41:41.123+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-25T21:41:41.143+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_tests manual__2026-03-25T21:36:43.418665+00:00 [queued]>
+[2026-03-25T21:41:41.150+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_tests manual__2026-03-25T21:36:43.418665+00:00 [queued]>
+[2026-03-25T21:41:41.152+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-25T21:41:41.164+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_dbt_tests> on 2026-03-25 21:36:43.418665+00:00
+[2026-03-25T21:41:41.171+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'run_dbt_tests', 'manual__2026-03-25T21:36:43.418665+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpl0w8jf9i']
+[2026-03-25T21:41:41.172+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=669) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-25T21:41:41.173+0000] {standard_task_runner.py:105} INFO - Job 4: Subtask run_dbt_tests
+[2026-03-25T21:41:41.173+0000] {standard_task_runner.py:72} INFO - Started process 670 to run task
+[2026-03-25T21:41:41.212+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.run_dbt_tests manual__2026-03-25T21:36:43.418665+00:00 [running]> on host e62bebbafd2b
+[2026-03-25T21:41:41.276+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_tests' AIRFLOW_CTX_EXECUTION_DATE='2026-03-25T21:36:43.418665+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-25T21:36:43.418665+00:00'
+[2026-03-25T21:41:41.277+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-25T21:41:41.290+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-25T21:41:41.291+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n    cd /opt/project/dbt/healthcare_dbt &&     rm -rf target logs &&     dbt test --no-partial-parse --profiles-dir /opt/***/.dbt\n    ']
+[2026-03-25T21:41:41.301+0000] {subprocess.py:99} INFO - Output:
+[2026-03-25T21:41:42.950+0000] {subprocess.py:106} INFO - [0m21:41:42  Running with dbt=1.11.7
+[2026-03-25T21:41:43.770+0000] {subprocess.py:106} INFO - [0m21:41:43  Registered adapter: snowflake=1.11.3
+[2026-03-25T21:41:45.152+0000] {subprocess.py:106} INFO - [0m21:41:45  Found 7 models, 11 data tests, 4 sources, 522 macros
+[2026-03-25T21:41:45.155+0000] {subprocess.py:106} INFO - [0m21:41:45
+[2026-03-25T21:41:45.155+0000] {subprocess.py:106} INFO - [0m21:41:45  Concurrency: 4 threads (target='dev')
+[2026-03-25T21:41:45.156+0000] {subprocess.py:106} INFO - [0m21:41:45
+[2026-03-25T21:41:46.798+0000] {subprocess.py:106} INFO - [0m21:41:46  1 of 11 START test not_null_mart_patient_utilization_patient_id ................ [RUN]
+[2026-03-25T21:41:46.799+0000] {subprocess.py:106} INFO - [0m21:41:46  2 of 11 START test not_null_stg_conditions_condition_code ...................... [RUN]
+[2026-03-25T21:41:46.799+0000] {subprocess.py:106} INFO - [0m21:41:46  3 of 11 START test not_null_stg_conditions_patient_id .......................... [RUN]
+[2026-03-25T21:41:46.800+0000] {subprocess.py:106} INFO - [0m21:41:46  4 of 11 START test not_null_stg_encounters_encounter_id ........................ [RUN]
+[2026-03-25T21:41:47.245+0000] {subprocess.py:106} INFO - [0m21:41:47  2 of 11 PASS not_null_stg_conditions_condition_code ............................ [[32mPASS[0m in 0.44s]
+[2026-03-25T21:41:47.248+0000] {subprocess.py:106} INFO - [0m21:41:47  5 of 11 START test not_null_stg_encounters_patient_id .......................... [RUN]
+[2026-03-25T21:41:47.316+0000] {subprocess.py:106} INFO - [0m21:41:47  1 of 11 PASS not_null_mart_patient_utilization_patient_id ...................... [[32mPASS[0m in 0.51s]
+[2026-03-25T21:41:47.318+0000] {subprocess.py:106} INFO - [0m21:41:47  6 of 11 START test not_null_stg_observations_observation_code .................. [RUN]
+[2026-03-25T21:41:47.328+0000] {subprocess.py:106} INFO - [0m21:41:47  3 of 11 PASS not_null_stg_conditions_patient_id ................................ [[32mPASS[0m in 0.53s]
+[2026-03-25T21:41:47.330+0000] {subprocess.py:106} INFO - [0m21:41:47  7 of 11 START test not_null_stg_observations_patient_id ........................ [RUN]
+[2026-03-25T21:41:47.443+0000] {subprocess.py:106} INFO - [0m21:41:47  5 of 11 PASS not_null_stg_encounters_patient_id ................................ [[32mPASS[0m in 0.19s]
+[2026-03-25T21:41:47.446+0000] {subprocess.py:106} INFO - [0m21:41:47  8 of 11 START test not_null_stg_patients_patient_id ............................ [RUN]
+[2026-03-25T21:41:47.653+0000] {subprocess.py:106} INFO - [0m21:41:47  6 of 11 PASS not_null_stg_observations_observation_code ........................ [[32mPASS[0m in 0.33s]
+[2026-03-25T21:41:47.655+0000] {subprocess.py:106} INFO - [0m21:41:47  9 of 11 START test unique_mart_patient_utilization_patient_id .................. [RUN]
+[2026-03-25T21:41:47.681+0000] {subprocess.py:106} INFO - [0m21:41:47  7 of 11 PASS not_null_stg_observations_patient_id .............................. [[32mPASS[0m in 0.35s]
+[2026-03-25T21:41:47.683+0000] {subprocess.py:106} INFO - [0m21:41:47  10 of 11 START test unique_stg_encounters_encounter_id ......................... [RUN]
+[2026-03-25T21:41:47.696+0000] {subprocess.py:106} INFO - [0m21:41:47  4 of 11 PASS not_null_stg_encounters_encounter_id .............................. [[32mPASS[0m in 0.89s]
+[2026-03-25T21:41:47.698+0000] {subprocess.py:106} INFO - [0m21:41:47  11 of 11 START test unique_stg_patients_patient_id ............................. [RUN]
+[2026-03-25T21:41:47.744+0000] {subprocess.py:106} INFO - [0m21:41:47  8 of 11 PASS not_null_stg_patients_patient_id .................................. [[32mPASS[0m in 0.30s]
+[2026-03-25T21:41:47.924+0000] {subprocess.py:106} INFO - [0m21:41:47  10 of 11 PASS unique_stg_encounters_encounter_id ............................... [[32mPASS[0m in 0.24s]
+[2026-03-25T21:41:48.216+0000] {subprocess.py:106} INFO - [0m21:41:48  11 of 11 PASS unique_stg_patients_patient_id ................................... [[32mPASS[0m in 0.52s]
+[2026-03-25T21:41:58.712+0000] {subprocess.py:106} INFO - [0m21:41:58  9 of 11 PASS unique_mart_patient_utilization_patient_id ........................ [[32mPASS[0m in 11.06s]
+[2026-03-25T21:41:59.196+0000] {subprocess.py:106} INFO - [0m21:41:59
+[2026-03-25T21:41:59.197+0000] {subprocess.py:106} INFO - [0m21:41:59  Finished running 11 data tests in 0 hours 0 minutes and 14.04 seconds (14.04s).
+[2026-03-25T21:41:59.396+0000] {subprocess.py:106} INFO - [0m21:41:59
+[2026-03-25T21:41:59.396+0000] {subprocess.py:106} INFO - [0m21:41:59  [32mCompleted successfully[0m
+[2026-03-25T21:41:59.397+0000] {subprocess.py:106} INFO - [0m21:41:59
+[2026-03-25T21:41:59.397+0000] {subprocess.py:106} INFO - [0m21:41:59  Done. PASS=11 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=11
+[2026-03-25T21:41:57.649+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-25T21:41:57.673+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-25T21:41:57.674+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=run_dbt_tests, run_id=manual__2026-03-25T21:36:43.418665+00:00, execution_date=20260325T213643, start_date=20260325T214141, end_date=20260325T214157
+[2026-03-25T21:41:57.749+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-25T21:41:57.764+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-25T21:41:57.766+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

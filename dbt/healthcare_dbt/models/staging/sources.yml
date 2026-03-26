@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    database: HC_DB
+    schema: RAW
+    tables:
+      - name: PATIENTS
+      - name: ENCOUNTERS
+      - name: CONDITIONS
+      - name: OBSERVATIONS

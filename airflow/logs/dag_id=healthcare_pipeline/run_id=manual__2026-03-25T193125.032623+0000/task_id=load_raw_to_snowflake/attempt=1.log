@@ -1,0 +1,25 @@
+[2026-03-25T19:31:25.518+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-25T19:31:25.538+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T19:31:25.032623+00:00 [queued]>
+[2026-03-25T19:31:25.546+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T19:31:25.032623+00:00 [queued]>
+[2026-03-25T19:31:25.547+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-25T19:31:25.559+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): load_raw_to_snowflake> on 2026-03-25 19:31:25.032623+00:00
+[2026-03-25T19:31:25.569+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-25T19:31:25.566+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'load_raw_to_snowflake', 'manual__2026-03-25T19:31:25.032623+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpkpbxjm1a']
+[2026-03-25T19:31:25.570+0000] {standard_task_runner.py:72} INFO - Started process 177 to run task
+[2026-03-25T19:31:25.570+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask load_raw_to_snowflake
+[2026-03-25T19:31:25.623+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-25T19:31:25.032623+00:00 [running]> on host b3edd5cf94fc
+[2026-03-25T19:31:25.700+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='load_raw_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-03-25T19:31:25.032623+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-25T19:31:25.032623+00:00'
+[2026-03-25T19:31:25.701+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-25T19:31:25.739+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-25T19:31:25.740+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/scripts &&         python load_csv_to_snowflake.py\n        ']
+[2026-03-25T19:31:25.753+0000] {subprocess.py:99} INFO - Output:
+[2026-03-25T19:35:55.302+0000] {subprocess.py:106} INFO - Loaded 229 rows into HC_DB.RAW.PATIENTS
+[2026-03-25T19:35:55.306+0000] {subprocess.py:106} INFO - Loaded 16931 rows into HC_DB.RAW.ENCOUNTERS
+[2026-03-25T19:35:55.307+0000] {subprocess.py:106} INFO - Loaded 8266 rows into HC_DB.RAW.CONDITIONS
+[2026-03-25T19:35:55.308+0000] {subprocess.py:106} INFO - Loaded 183334 rows into HC_DB.RAW.OBSERVATIONS
+[2026-03-25T19:35:55.541+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-25T19:35:55.587+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-25T19:35:55.590+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=load_raw_to_snowflake, run_id=manual__2026-03-25T19:31:25.032623+00:00, execution_date=20260325T193125, start_date=20260325T193125, end_date=20260325T193555
+[2026-03-25T19:35:55.636+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-25T19:35:55.673+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-25T19:35:55.676+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
