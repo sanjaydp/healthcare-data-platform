@@ -1,0 +1,12 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: dummy
+      user: dummy
+      password: dummy
+      role: dummy
+      database: dummy
+      warehouse: dummy
+      schema: public

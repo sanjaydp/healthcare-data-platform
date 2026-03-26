@@ -2995,3 +2995,192 @@
 [2026-03-26T16:17:30.423+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:17:30.423+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2026-03-26T16:17:30.438+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:17:30.438+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
 [2026-03-26T16:17:30.459+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.105 seconds
+[2026-03-26T16:18:00.528+0000] {processor.py:186} INFO - Started process (PID=556) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:00.529+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:18:00.531+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:00.531+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:00.552+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:00.591+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:00.591+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:18:00.608+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:00.608+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:18:00.629+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.104 seconds
+[2026-03-26T16:18:30.707+0000] {processor.py:186} INFO - Started process (PID=561) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:30.708+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:18:30.710+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:30.710+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:30.730+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:18:30.769+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:30.769+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:18:30.785+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:18:30.785+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:18:30.805+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.103 seconds
+[2026-03-26T16:19:00.921+0000] {processor.py:186} INFO - Started process (PID=566) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:00.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:19:00.925+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:00.924+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:00.947+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:00.990+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:00.990+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:19:01.007+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:01.006+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:19:01.030+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.113 seconds
+[2026-03-26T16:19:31.154+0000] {processor.py:186} INFO - Started process (PID=571) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:31.155+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:19:31.157+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:31.157+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:31.170+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:19:31.205+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:31.204+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:19:31.219+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:19:31.219+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:19:31.236+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.085 seconds
+[2026-03-26T16:20:01.293+0000] {processor.py:186} INFO - Started process (PID=576) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:01.294+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:20:01.297+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:01.296+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:01.314+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:01.348+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:01.348+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:20:01.361+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:01.361+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:20:01.380+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.090 seconds
+[2026-03-26T16:20:31.490+0000] {processor.py:186} INFO - Started process (PID=581) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:31.491+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:20:31.493+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:31.493+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:31.508+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:20:31.541+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:31.540+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:20:31.555+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:20:31.554+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:20:31.573+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.088 seconds
+[2026-03-26T16:21:01.634+0000] {processor.py:186} INFO - Started process (PID=586) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:01.635+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:21:01.636+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:01.636+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:01.576+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:01.613+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:01.613+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:21:01.628+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:01.628+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:21:01.645+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.095 seconds
+[2026-03-26T16:21:31.740+0000] {processor.py:186} INFO - Started process (PID=591) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:31.741+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:21:31.744+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:31.744+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:31.764+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:21:31.802+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:31.801+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:21:31.818+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:21:31.817+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:21:31.837+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.101 seconds
+[2026-03-26T16:22:01.933+0000] {processor.py:186} INFO - Started process (PID=596) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:01.934+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:22:01.936+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:01.936+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:01.956+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:01.997+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:01.997+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:22:02.014+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:02.014+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:22:02.035+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.107 seconds
+[2026-03-26T16:22:32.138+0000] {processor.py:186} INFO - Started process (PID=601) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:32.139+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:22:32.142+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:32.141+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:32.156+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:22:32.188+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:32.188+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:22:32.201+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:22:32.201+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:22:32.217+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.082 seconds
+[2026-03-26T16:23:02.291+0000] {processor.py:186} INFO - Started process (PID=606) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:02.292+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:23:02.294+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:02.294+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:02.310+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:02.346+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:02.346+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:23:02.362+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:02.362+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:23:02.384+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.096 seconds
+[2026-03-26T16:23:32.476+0000] {processor.py:186} INFO - Started process (PID=611) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:32.477+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:23:32.480+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:32.479+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:32.501+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:23:32.542+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:32.542+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:23:32.557+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:23:32.557+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:23:32.577+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.106 seconds
+[2026-03-26T16:24:02.659+0000] {processor.py:186} INFO - Started process (PID=616) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:02.660+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:24:02.661+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:02.661+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:02.681+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:02.705+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:02.704+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:24:02.718+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:02.718+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:24:02.735+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.080 seconds
+[2026-03-26T16:24:32.894+0000] {processor.py:186} INFO - Started process (PID=621) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:32.895+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:24:32.898+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:32.898+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:32.923+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:24:32.973+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:32.973+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:24:32.996+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:24:32.996+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:24:33.028+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.139 seconds
+[2026-03-26T16:25:03.139+0000] {processor.py:186} INFO - Started process (PID=626) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:03.140+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:25:03.143+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:03.142+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:03.174+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:03.223+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:03.223+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:25:03.246+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:03.246+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:25:03.279+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.144 seconds
+[2026-03-26T16:25:33.339+0000] {processor.py:186} INFO - Started process (PID=631) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:33.340+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:25:33.341+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:33.341+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:33.360+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:25:33.390+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:33.389+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:25:33.405+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:25:33.405+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:25:33.422+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.087 seconds
+[2026-03-26T16:26:03.564+0000] {processor.py:186} INFO - Started process (PID=636) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:03.565+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:26:03.568+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:03.568+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:03.598+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:03.636+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:03.636+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:26:03.654+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:03.654+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:26:03.677+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.119 seconds
+[2026-03-26T16:26:33.788+0000] {processor.py:186} INFO - Started process (PID=641) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:33.790+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:26:33.795+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:33.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:33.830+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:26:33.886+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:33.885+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:26:33.913+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:26:33.913+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:26:33.951+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.176 seconds
+[2026-03-26T16:27:04.107+0000] {processor.py:186} INFO - Started process (PID=646) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:04.109+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:27:04.116+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:04.115+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:04.142+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:04.192+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:04.192+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:27:04.213+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:04.212+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:27:04.238+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.140 seconds
+[2026-03-26T16:27:34.370+0000] {processor.py:186} INFO - Started process (PID=651) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:34.371+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:27:34.374+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:34.373+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:34.391+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:27:34.418+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:34.418+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:27:34.434+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:27:34.434+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:27:34.454+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.089 seconds
+[2026-03-26T16:28:04.512+0000] {processor.py:186} INFO - Started process (PID=656) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:04.513+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:28:04.517+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:04.516+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:04.539+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:04.574+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:04.573+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:28:04.589+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:04.588+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:28:04.608+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.101 seconds
+[2026-03-26T16:28:34.716+0000] {processor.py:186} INFO - Started process (PID=661) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:34.718+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:28:34.720+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:34.720+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:34.740+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:28:34.775+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:34.775+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:28:34.790+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:28:34.790+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:28:34.815+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.103 seconds
+[2026-03-26T16:29:04.878+0000] {processor.py:186} INFO - Started process (PID=666) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:04.879+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:29:04.881+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:04.881+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:04.898+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:04.930+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:04.930+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:29:04.945+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:04.944+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:29:04.963+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.089 seconds
+[2026-03-26T16:29:35.071+0000] {processor.py:186} INFO - Started process (PID=671) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:35.072+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:29:35.074+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:35.074+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:35.092+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:29:35.119+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:35.119+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:29:35.133+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:29:35.133+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:29:35.152+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.087 seconds
+[2026-03-26T16:30:05.221+0000] {processor.py:186} INFO - Started process (PID=676) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:05.222+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:30:05.224+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:05.224+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:05.243+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:05.278+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:05.278+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:30:05.295+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:05.295+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:30:05.316+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.100 seconds
+[2026-03-26T16:30:35.422+0000] {processor.py:186} INFO - Started process (PID=681) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:35.423+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:30:35.425+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:35.425+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:35.441+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:30:35.473+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:35.472+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:30:35.488+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:30:35.488+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:30:35.511+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.093 seconds
+[2026-03-26T16:31:05.568+0000] {processor.py:186} INFO - Started process (PID=686) to work on /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:31:05.569+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/healthcare_pipeline_dag.py for tasks to queue
+[2026-03-26T16:31:05.572+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:31:05.572+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:31:05.593+0000] {processor.py:925} INFO - DAG(s) 'healthcare_pipeline' retrieved from /opt/airflow/dags/healthcare_pipeline_dag.py
+[2026-03-26T16:31:05.632+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:31:05.632+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-26T16:31:05.650+0000] {logging_mixin.py:190} INFO - [2026-03-26T16:31:05.650+0000] {dag.py:4180} INFO - Setting next_dagrun for healthcare_pipeline to None, run_after=None
+[2026-03-26T16:31:05.672+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/healthcare_pipeline_dag.py took 0.108 seconds

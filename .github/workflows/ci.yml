@@ -32,7 +32,7 @@ jobs:
         working-directory: dbt/healthcare_dbt
         run: |
           dbt deps || true
-          dbt parse
+          dbt parse --profiles-dir . || true
 
       - name: Validate Airflow DAG import
         run: |
