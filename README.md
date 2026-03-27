@@ -219,12 +219,9 @@ cd healthcare-data-platform
 - `.github/workflows/` - CI/CD pipelines
 
 
-## Repository Structure
+## Results
 
-- `airflow/` - DAGs, logs, plugins, dbt profiles
-- `pyspark/` - streaming and batch processing scripts
-- `dbt/healthcare_dbt/` - dbt models, tests, and project files
-- `great_expectations/` - data validation configuration
-- `scripts/` - utility and pipeline execution scripts
-- `data/` - sample and intermediate data assets
-- `.github/workflows/` - CI/CD pipelines
+- Built a reproducible end-to-end healthcare pipeline spanning ingestion, storage, transformation, validation, and lineage
+- Orchestrated 6 pipeline stages in Airflow, including dbt model execution and testing
+- Captured job-level lineage in Marquez using OpenLineage
+- Produced analytics-ready datasets for Power BI reporting
