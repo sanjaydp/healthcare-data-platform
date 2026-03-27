@@ -1,0 +1,50 @@
+[2026-03-27T02:06:03.935+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-27T02:06:03.980+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-27T02:06:03.180162+00:00 [queued]>
+[2026-03-27T02:06:03.990+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-27T02:06:03.180162+00:00 [queued]>
+[2026-03-27T02:06:03.991+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-27T02:06:04.005+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_dbt_models> on 2026-03-27 02:06:03.180162+00:00
+[2026-03-27T02:06:04.023+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-27T02:06:04.015+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'run_dbt_models', 'manual__2026-03-27T02:06:03.180162+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpwu21q6pz']
+[2026-03-27T02:06:04.025+0000] {standard_task_runner.py:72} INFO - Started process 177 to run task
+[2026-03-27T02:06:04.025+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask run_dbt_models
+[2026-03-27T02:06:04.135+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-27T02:06:03.180162+00:00 [running]> on host a01713d1449a
+[2026-03-27T02:06:04.227+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2026-03-27T02:06:03.180162+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-27T02:06:03.180162+00:00'
+[2026-03-27T02:06:04.232+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-27T02:06:04.234+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-27T02:06:04.235+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-27T02:06:04.327+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-27T02:06:04.372+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-27T02:06:04.373+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        docker exec dbt dbt run         --project-dir /usr/app/dbt/healthcare_dbt         --profiles-dir /usr/app/***/dbt_profiles\n        ']
+[2026-03-27T02:06:04.389+0000] {subprocess.py:99} INFO - Output:
+[2026-03-27T02:06:07.002+0000] {subprocess.py:106} INFO - [0m02:06:07  Running with dbt=1.11.7
+[2026-03-27T02:06:07.675+0000] {subprocess.py:106} INFO - [0m02:06:07  Registered adapter: snowflake=1.11.3
+[2026-03-27T02:06:08.145+0000] {subprocess.py:106} INFO - [0m02:06:08  Found 7 models, 11 data tests, 4 sources, 522 macros
+[2026-03-27T02:06:08.147+0000] {subprocess.py:106} INFO - [0m02:06:08
+[2026-03-27T02:06:08.148+0000] {subprocess.py:106} INFO - [0m02:06:08  Concurrency: 4 threads (target='dev')
+[2026-03-27T02:06:08.148+0000] {subprocess.py:106} INFO - [0m02:06:08
+[2026-03-27T02:06:21.456+0000] {subprocess.py:106} INFO - [0m02:06:21  1 of 7 START sql view model RAW_STAGING.stg_conditions ......................... [RUN]
+[2026-03-27T02:06:21.456+0000] {subprocess.py:106} INFO - [0m02:06:21  2 of 7 START sql view model RAW_STAGING.stg_encounters ......................... [RUN]
+[2026-03-27T02:06:21.457+0000] {subprocess.py:106} INFO - [0m02:06:21  3 of 7 START sql view model RAW_STAGING.stg_observations ....................... [RUN]
+[2026-03-27T02:06:21.459+0000] {subprocess.py:106} INFO - [0m02:06:21  4 of 7 START sql view model RAW_STAGING.stg_patients ........................... [RUN]
+[2026-03-27T02:06:21.850+0000] {subprocess.py:106} INFO - [0m02:06:21  1 of 7 OK created sql view model RAW_STAGING.stg_conditions .................... [[32mSUCCESS 1[0m in 0.39s]
+[2026-03-27T02:06:21.852+0000] {subprocess.py:106} INFO - [0m02:06:21  2 of 7 OK created sql view model RAW_STAGING.stg_encounters .................... [[32mSUCCESS 1[0m in 0.39s]
+[2026-03-27T02:06:21.861+0000] {subprocess.py:106} INFO - [0m02:06:21  5 of 7 START sql table model RAW_MARTS.mart_condition_prevalence ............... [RUN]
+[2026-03-27T02:06:23.279+0000] {subprocess.py:106} INFO - [0m02:06:23  5 of 7 OK created sql table model RAW_MARTS.mart_condition_prevalence .......... [[32mSUCCESS 223[0m in 1.42s]
+[2026-03-27T02:06:23.290+0000] {subprocess.py:106} INFO - [0m02:06:23  3 of 7 OK created sql view model RAW_STAGING.stg_observations .................. [[32mSUCCESS 1[0m in 1.83s]
+[2026-03-27T02:06:23.610+0000] {subprocess.py:106} INFO - [0m02:06:23  4 of 7 OK created sql view model RAW_STAGING.stg_patients ...................... [[32mSUCCESS 1[0m in 2.15s]
+[2026-03-27T02:06:23.612+0000] {subprocess.py:106} INFO - [0m02:06:23  6 of 7 START sql table model RAW_MARTS.mart_patient_clinical_summary ........... [RUN]
+[2026-03-27T02:06:23.613+0000] {subprocess.py:106} INFO - [0m02:06:23  7 of 7 START sql table model RAW_MARTS.mart_patient_utilization ................ [RUN]
+[2026-03-27T02:06:25.591+0000] {subprocess.py:106} INFO - [0m02:06:25  6 of 7 OK created sql table model RAW_MARTS.mart_patient_clinical_summary ...... [[32mSUCCESS 229[0m in 1.98s]
+[2026-03-27T02:06:25.676+0000] {subprocess.py:106} INFO - [0m02:06:25  7 of 7 OK created sql table model RAW_MARTS.mart_patient_utilization ........... [[32mSUCCESS 229[0m in 2.06s]
+[2026-03-27T02:06:26.148+0000] {subprocess.py:106} INFO - [0m02:06:26
+[2026-03-27T02:06:26.149+0000] {subprocess.py:106} INFO - [0m02:06:26  Finished running 3 table models, 4 view models in 0 hours 0 minutes and 18.00 seconds (18.00s).
+[2026-03-27T02:06:26.199+0000] {subprocess.py:106} INFO - [0m02:06:26
+[2026-03-27T02:06:26.200+0000] {subprocess.py:106} INFO - [0m02:06:26  [32mCompleted successfully[0m
+[2026-03-27T02:06:26.200+0000] {subprocess.py:106} INFO - [0m02:06:26
+[2026-03-27T02:06:26.200+0000] {subprocess.py:106} INFO - [0m02:06:26  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[2026-03-27T02:06:27.080+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-27T02:06:27.100+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-27T02:06:27.100+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=run_dbt_models, run_id=manual__2026-03-27T02:06:03.180162+00:00, execution_date=20260327T020603, start_date=20260327T020603, end_date=20260327T020627
+[2026-03-27T02:06:27.258+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-27T02:06:27.269+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-27T02:06:27.271+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

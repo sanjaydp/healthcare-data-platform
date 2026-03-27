@@ -1,0 +1,228 @@
+[2026-03-26T20:25:32.232+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T20:25:32.253+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.produce_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [queued]>
+[2026-03-26T20:25:32.264+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.produce_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [queued]>
+[2026-03-26T20:25:32.265+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T20:25:32.278+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): produce_encounter_events> on 2026-03-26 20:25:31.450315+00:00
+[2026-03-26T20:25:32.285+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'produce_encounter_events', 'manual__2026-03-26T20:25:31.450315+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmp5qp4c3hl']
+[2026-03-26T20:25:32.287+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask produce_encounter_events
+[2026-03-26T20:25:32.287+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=181) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T20:25:32.288+0000] {standard_task_runner.py:72} INFO - Started process 187 to run task
+[2026-03-26T20:25:32.334+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.produce_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [running]> on host 9410531f96ad
+[2026-03-26T20:25:32.427+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='produce_encounter_events' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T20:25:31.450315+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T20:25:31.450315+00:00'
+[2026-03-26T20:25:32.439+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T20:25:32.444+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T20:25:32.445+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T20:25:39.400+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id b8cd5d7f-4db7-3e35-9435-6c40051f99fb
+[2026-03-26T20:25:39.401+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T20:25:39.458+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T20:25:39.460+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/scripts &&         python kafka_producer_encounters.py\n        ']
+[2026-03-26T20:25:39.475+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T20:25:41.450+0000] {subprocess.py:106} INFO - /opt/project/scripts/kafka_producer_encounters.py:27: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+[2026-03-26T20:25:41.450+0000] {subprocess.py:106} INFO -   "event_ts": datetime.utcnow().isoformat(),
+[2026-03-26T20:26:08.622+0000] {subprocess.py:106} INFO - Sent encounter event: 249f8114-1540-403b-b867-1bad1285e506
+[2026-03-26T20:26:08.624+0000] {subprocess.py:106} INFO - Sent encounter event: 09882abb-464b-4128-b796-0bbce8b32789
+[2026-03-26T20:26:08.625+0000] {subprocess.py:106} INFO - Sent encounter event: 92d49d60-d137-4245-a5d7-ac4cbbe99816
+[2026-03-26T20:26:08.626+0000] {subprocess.py:106} INFO - Sent encounter event: 3d1e86e6-0516-46ee-8e68-14969ccf57c3
+[2026-03-26T20:26:08.626+0000] {subprocess.py:106} INFO - Sent encounter event: 801007af-84a4-4500-8d92-9e9685b689b6
+[2026-03-26T20:26:08.627+0000] {subprocess.py:106} INFO - Sent encounter event: df11c9ef-9c57-4e4a-a9b1-b93d85ea1977
+[2026-03-26T20:26:08.627+0000] {subprocess.py:106} INFO - Sent encounter event: 56d1b052-adbc-4485-bb5f-45f2f9441231
+[2026-03-26T20:26:08.627+0000] {subprocess.py:106} INFO - Sent encounter event: 59c29233-43b2-4fc6-a375-2fe39bba2898
+[2026-03-26T20:26:08.627+0000] {subprocess.py:106} INFO - Sent encounter event: 962f9ebb-0f4b-4b19-a720-e727a2097fa2
+[2026-03-26T20:26:08.628+0000] {subprocess.py:106} INFO - Sent encounter event: 9d0c9f58-cd1f-42f7-9ad4-1524bd8a3055
+[2026-03-26T20:26:08.628+0000] {subprocess.py:106} INFO - Sent encounter event: fa9dec4f-afaa-4f07-933d-6fa05e2c1f0e
+[2026-03-26T20:26:08.628+0000] {subprocess.py:106} INFO - Sent encounter event: ff8d4235-5ab7-429b-bd1f-ea0a80608145
+[2026-03-26T20:26:08.629+0000] {subprocess.py:106} INFO - Sent encounter event: 605c8610-1895-44a2-a4d9-91be9fc167f9
+[2026-03-26T20:26:08.629+0000] {subprocess.py:106} INFO - Sent encounter event: 60752f1c-949a-4097-8ca1-51bbeaf0f42d
+[2026-03-26T20:26:08.629+0000] {subprocess.py:106} INFO - Sent encounter event: c4efa3e0-cefd-472a-986e-396aec5d1b1c
+[2026-03-26T20:26:08.630+0000] {subprocess.py:106} INFO - Sent encounter event: 58b747a5-34fb-406f-90d1-10f9be95fb6b
+[2026-03-26T20:26:08.630+0000] {subprocess.py:106} INFO - Sent encounter event: c145278c-7e20-4ef0-938b-5f31e4cb4393
+[2026-03-26T20:26:08.630+0000] {subprocess.py:106} INFO - Sent encounter event: 3e1ac047-5076-4420-bbdb-29572d25638f
+[2026-03-26T20:26:08.631+0000] {subprocess.py:106} INFO - Sent encounter event: c8d85434-ff37-4513-828f-886c2ddad1dc
+[2026-03-26T20:26:08.631+0000] {subprocess.py:106} INFO - Sent encounter event: 73d4051e-8f75-403a-bbd1-683ddeef34ef
+[2026-03-26T20:26:08.631+0000] {subprocess.py:106} INFO - Sent encounter event: 741815be-a474-4eb0-9cde-fe4dfad6baf0
+[2026-03-26T20:26:08.631+0000] {subprocess.py:106} INFO - Sent encounter event: b3222bb8-9961-4640-8c67-a21fb757ed94
+[2026-03-26T20:26:08.632+0000] {subprocess.py:106} INFO - Sent encounter event: e5bd1ac8-4292-45f5-a706-13add10cb477
+[2026-03-26T20:26:08.632+0000] {subprocess.py:106} INFO - Sent encounter event: 821e0d77-073a-4bb1-8390-85b15f0420d3
+[2026-03-26T20:26:08.632+0000] {subprocess.py:106} INFO - Sent encounter event: cc3c7f4f-e6b4-479c-bd04-2601cc642a94
+[2026-03-26T20:26:08.633+0000] {subprocess.py:106} INFO - Sent encounter event: 52b657d5-aa48-44e5-8a24-a6f3fac7a6af
+[2026-03-26T20:26:08.633+0000] {subprocess.py:106} INFO - Sent encounter event: 2a86d97e-756d-413e-8df4-95605a6cc3fe
+[2026-03-26T20:26:08.633+0000] {subprocess.py:106} INFO - Sent encounter event: 66e352b3-72e3-45b0-b6a1-1b32ea16c452
+[2026-03-26T20:26:08.633+0000] {subprocess.py:106} INFO - Sent encounter event: 6fc599e9-4f35-402f-a64b-87590df23143
+[2026-03-26T20:26:08.634+0000] {subprocess.py:106} INFO - Sent encounter event: 2144de4a-5b4c-4d5e-b2b4-a6cbe78becc6
+[2026-03-26T20:26:08.634+0000] {subprocess.py:106} INFO - Sent encounter event: de8a952e-34fd-43c6-8998-d1717ce3295d
+[2026-03-26T20:26:08.635+0000] {subprocess.py:106} INFO - Sent encounter event: 955b92af-adeb-43bf-b7d8-673a6e1ee717
+[2026-03-26T20:26:08.635+0000] {subprocess.py:106} INFO - Sent encounter event: 5d75feb4-eb7e-4fe4-b5c8-b8c37b03a01b
+[2026-03-26T20:26:08.635+0000] {subprocess.py:106} INFO - Sent encounter event: c9f767b4-5892-4725-83c0-a25b99366fff
+[2026-03-26T20:26:08.635+0000] {subprocess.py:106} INFO - Sent encounter event: 052756e8-bed3-4e5a-8a52-b0f3525d725d
+[2026-03-26T20:26:08.636+0000] {subprocess.py:106} INFO - Sent encounter event: ccc634ea-4c83-4f7b-9ddb-d3e6fd284f94
+[2026-03-26T20:26:08.636+0000] {subprocess.py:106} INFO - Sent encounter event: cbd4d90f-7413-4b27-aa85-67b0ca2048c6
+[2026-03-26T20:26:08.636+0000] {subprocess.py:106} INFO - Sent encounter event: f180bf81-1c42-44c2-b3b6-a5b90dbaa9f4
+[2026-03-26T20:26:08.637+0000] {subprocess.py:106} INFO - Sent encounter event: 46614c9c-4599-4714-ae90-e89ade467bb4
+[2026-03-26T20:26:08.637+0000] {subprocess.py:106} INFO - Sent encounter event: dd280efb-dd3e-492f-ac68-2d6931761445
+[2026-03-26T20:26:08.637+0000] {subprocess.py:106} INFO - Sent encounter event: 855fd244-64cd-413f-a340-8ef437d6d596
+[2026-03-26T20:26:08.638+0000] {subprocess.py:106} INFO - Sent encounter event: 82796618-d2f3-4d18-80b7-ddc1443abd74
+[2026-03-26T20:26:08.638+0000] {subprocess.py:106} INFO - Sent encounter event: 81e8ac43-0cb2-4ac3-8a5d-3fea3db343e4
+[2026-03-26T20:26:08.638+0000] {subprocess.py:106} INFO - Sent encounter event: ba397878-c68c-4783-991d-2285a7b1cb9d
+[2026-03-26T20:26:08.638+0000] {subprocess.py:106} INFO - Sent encounter event: 3f8ffd05-8f73-43db-a765-835cffd554db
+[2026-03-26T20:26:08.639+0000] {subprocess.py:106} INFO - Sent encounter event: c8f338ec-23ce-40b2-b986-f10607715c95
+[2026-03-26T20:26:08.639+0000] {subprocess.py:106} INFO - Sent encounter event: 2332b907-bd6c-4e99-b06a-9010cdb9f233
+[2026-03-26T20:26:08.639+0000] {subprocess.py:106} INFO - Sent encounter event: 7621a535-4d37-47ed-b909-f3a23b65a03c
+[2026-03-26T20:26:08.640+0000] {subprocess.py:106} INFO - Sent encounter event: 38dee3f6-5def-4a5a-8aba-7a696b36471e
+[2026-03-26T20:26:08.640+0000] {subprocess.py:106} INFO - Sent encounter event: 5273ac5b-ad9e-473b-b722-efd85e753e97
+[2026-03-26T20:26:08.641+0000] {subprocess.py:106} INFO - Sent encounter event: c05020f5-9f6a-4b4e-9c79-486d9bee27d8
+[2026-03-26T20:26:08.641+0000] {subprocess.py:106} INFO - Sent encounter event: 146516c1-1b23-40a7-93ae-aa7fc5b21662
+[2026-03-26T20:26:08.642+0000] {subprocess.py:106} INFO - Sent encounter event: f6a7c937-0c2b-4749-8462-ec60abbca846
+[2026-03-26T20:26:08.642+0000] {subprocess.py:106} INFO - Sent encounter event: 61066aef-1770-4098-a882-4b2131f827ec
+[2026-03-26T20:26:08.642+0000] {subprocess.py:106} INFO - Sent encounter event: f51132f8-6bd3-4fd8-80bd-f33b911ab459
+[2026-03-26T20:26:08.642+0000] {subprocess.py:106} INFO - Sent encounter event: a45f8b8c-3b33-4690-855f-aaad8c41fd91
+[2026-03-26T20:26:08.643+0000] {subprocess.py:106} INFO - Sent encounter event: bd613bc9-001e-4d0a-8a9f-d364e3a1b27a
+[2026-03-26T20:26:08.643+0000] {subprocess.py:106} INFO - Sent encounter event: 63b2a86c-84db-4d30-bc04-a454578556d1
+[2026-03-26T20:26:08.643+0000] {subprocess.py:106} INFO - Sent encounter event: 59ce255e-6aaa-475e-9102-c39f4da7816d
+[2026-03-26T20:26:08.644+0000] {subprocess.py:106} INFO - Sent encounter event: 281d9c2e-d598-4e3a-9d54-367fa32c2d25
+[2026-03-26T20:26:08.644+0000] {subprocess.py:106} INFO - Sent encounter event: 400e3922-1f16-4b7a-aa86-d38b26035fc9
+[2026-03-26T20:26:08.644+0000] {subprocess.py:106} INFO - Sent encounter event: e0dfc3af-bcae-491b-a788-801389a5b80f
+[2026-03-26T20:26:08.644+0000] {subprocess.py:106} INFO - Sent encounter event: ecb61ff6-c02c-494b-853d-077ef2b7bd63
+[2026-03-26T20:26:08.645+0000] {subprocess.py:106} INFO - Sent encounter event: f0decc6e-7189-4a07-8166-dea2b206ea5a
+[2026-03-26T20:26:08.645+0000] {subprocess.py:106} INFO - Sent encounter event: 9ff6006e-77ec-439b-9da4-13ec72cf58c6
+[2026-03-26T20:26:08.645+0000] {subprocess.py:106} INFO - Sent encounter event: 4a948c5d-32f3-4a19-8dd8-c7539f0004fd
+[2026-03-26T20:26:08.646+0000] {subprocess.py:106} INFO - Sent encounter event: 089dac23-a118-4d3c-b91e-13f5c60fed79
+[2026-03-26T20:26:08.646+0000] {subprocess.py:106} INFO - Sent encounter event: 545142e7-0d9c-4d95-817b-ff37fd62a8c2
+[2026-03-26T20:26:08.646+0000] {subprocess.py:106} INFO - Sent encounter event: a2bca59c-848c-4969-a080-7f58a21ad120
+[2026-03-26T20:26:08.646+0000] {subprocess.py:106} INFO - Sent encounter event: 944de828-563c-45ee-a1a1-941dc71125be
+[2026-03-26T20:26:08.647+0000] {subprocess.py:106} INFO - Sent encounter event: 686ea717-e70f-408f-94b1-10c8ed52c891
+[2026-03-26T20:26:08.647+0000] {subprocess.py:106} INFO - Sent encounter event: 101bda77-360a-4ce9-a525-e8cb63e78626
+[2026-03-26T20:26:08.647+0000] {subprocess.py:106} INFO - Sent encounter event: dd0091b1-f640-4d1f-9bfd-961774996021
+[2026-03-26T20:26:08.647+0000] {subprocess.py:106} INFO - Sent encounter event: 399b6dd7-4958-4d08-ae9c-8422db5b563f
+[2026-03-26T20:26:08.648+0000] {subprocess.py:106} INFO - Sent encounter event: 2072f8a4-67b6-4ca7-980a-c595b276085b
+[2026-03-26T20:26:08.648+0000] {subprocess.py:106} INFO - Sent encounter event: a568f34f-0b17-4fa9-b2ab-5595526e6de3
+[2026-03-26T20:26:08.648+0000] {subprocess.py:106} INFO - Sent encounter event: 34ef84ed-84e8-4d45-814c-f15954499908
+[2026-03-26T20:26:08.649+0000] {subprocess.py:106} INFO - Sent encounter event: 8c312ed7-3b47-419c-94bb-8355d74083c3
+[2026-03-26T20:26:08.649+0000] {subprocess.py:106} INFO - Sent encounter event: e9e1fbaf-e3d0-496a-8819-90aa9b0a26d7
+[2026-03-26T20:26:08.649+0000] {subprocess.py:106} INFO - Sent encounter event: 95509211-c631-48f9-b16a-51853879709b
+[2026-03-26T20:26:08.649+0000] {subprocess.py:106} INFO - Sent encounter event: 03e92ac7-6a9d-4f12-9854-9022642c0f20
+[2026-03-26T20:26:08.650+0000] {subprocess.py:106} INFO - Sent encounter event: c3fef5d7-096e-402f-aff0-9b7d9dff456c
+[2026-03-26T20:26:08.650+0000] {subprocess.py:106} INFO - Sent encounter event: ab7912a2-59f6-4758-9e66-6c3a71ef865c
+[2026-03-26T20:26:08.650+0000] {subprocess.py:106} INFO - Sent encounter event: d783ba1e-2be1-454c-80e8-b26daf0373ac
+[2026-03-26T20:26:08.650+0000] {subprocess.py:106} INFO - Sent encounter event: 81fb7eed-1b5c-497f-98ff-3df7cb6b623d
+[2026-03-26T20:26:08.651+0000] {subprocess.py:106} INFO - Sent encounter event: d4ebce90-a982-46ee-a73b-23a9634a0cf2
+[2026-03-26T20:26:08.651+0000] {subprocess.py:106} INFO - Sent encounter event: c752229c-fb45-4f99-99f3-acf05d899cbf
+[2026-03-26T20:26:08.651+0000] {subprocess.py:106} INFO - Sent encounter event: 8d4fb9e8-5735-4fe2-94b3-8c7d21aebbc4
+[2026-03-26T20:26:08.652+0000] {subprocess.py:106} INFO - Sent encounter event: 5ef519ec-1ad3-48fb-bef3-61d79981d5df
+[2026-03-26T20:26:08.652+0000] {subprocess.py:106} INFO - Sent encounter event: 7ef8ed48-ef96-44a5-b5bf-543754c19b57
+[2026-03-26T20:26:08.652+0000] {subprocess.py:106} INFO - Sent encounter event: f440c7da-e5b4-4c73-90c8-c30bfa694a06
+[2026-03-26T20:26:08.653+0000] {subprocess.py:106} INFO - Sent encounter event: d5976085-5e24-422e-ae16-1ba884c2f797
+[2026-03-26T20:26:08.653+0000] {subprocess.py:106} INFO - Sent encounter event: b5917d1f-2e33-4d8f-879f-78000bd3d4b0
+[2026-03-26T20:26:08.653+0000] {subprocess.py:106} INFO - Sent encounter event: d6112798-e548-4469-87d6-7f0cc7d27023
+[2026-03-26T20:26:08.654+0000] {subprocess.py:106} INFO - Sent encounter event: 126035f0-c359-4227-95d3-3e0b6174da46
+[2026-03-26T20:26:08.654+0000] {subprocess.py:106} INFO - Sent encounter event: 83c22710-b0e7-4fb5-abf1-5626a69fd724
+[2026-03-26T20:26:08.654+0000] {subprocess.py:106} INFO - Sent encounter event: 8baebf1c-8a0a-4798-89fb-93df7b94450e
+[2026-03-26T20:26:08.655+0000] {subprocess.py:106} INFO - Sent encounter event: 9de64511-8d01-4962-8b2f-4faae9a1e6ef
+[2026-03-26T20:26:08.655+0000] {subprocess.py:106} INFO - Sent encounter event: 46346b4d-9b04-433b-ba71-c18c846349a1
+[2026-03-26T20:26:08.655+0000] {subprocess.py:106} INFO - Sent encounter event: 5f860446-aa1f-4a8c-942d-ef9973a6b30c
+[2026-03-26T20:26:08.656+0000] {subprocess.py:106} INFO - Sent encounter event: 2e3f8c58-cdd7-474c-a235-d08ecbda801c
+[2026-03-26T20:26:08.656+0000] {subprocess.py:106} INFO - Sent encounter event: ccc86697-16ef-4f87-8b71-de849b4ed30c
+[2026-03-26T20:26:08.656+0000] {subprocess.py:106} INFO - Sent encounter event: ad444a8e-1a59-44cd-875a-3b1116b27c2d
+[2026-03-26T20:26:08.656+0000] {subprocess.py:106} INFO - Sent encounter event: 3ec689dc-47e7-4812-a03a-3a014a638d22
+[2026-03-26T20:26:08.657+0000] {subprocess.py:106} INFO - Sent encounter event: 08ad15c2-7d18-4fd8-be4a-7152d93cf3b2
+[2026-03-26T20:26:08.657+0000] {subprocess.py:106} INFO - Sent encounter event: 2a60a183-26fe-4e42-8c72-385a487b0ab9
+[2026-03-26T20:26:08.657+0000] {subprocess.py:106} INFO - Sent encounter event: cb5b8532-4353-44b5-80af-70e661ba0b85
+[2026-03-26T20:26:08.658+0000] {subprocess.py:106} INFO - Sent encounter event: 1419e75d-cb94-4afb-a7a4-e8e2a75c2bdd
+[2026-03-26T20:26:08.659+0000] {subprocess.py:106} INFO - Sent encounter event: 74e834cb-f4eb-47c0-8738-bd7da6b47503
+[2026-03-26T20:26:08.659+0000] {subprocess.py:106} INFO - Sent encounter event: ebf2273b-590f-4f9a-87b1-131a41d1226d
+[2026-03-26T20:26:08.659+0000] {subprocess.py:106} INFO - Sent encounter event: fc1a3481-31f8-44e4-a374-da28b1e6f1cd
+[2026-03-26T20:26:08.660+0000] {subprocess.py:106} INFO - Sent encounter event: c86407d6-e166-4fa7-b40e-280785d6a2dc
+[2026-03-26T20:26:08.660+0000] {subprocess.py:106} INFO - Sent encounter event: a98e9f53-0632-415f-bf02-31f92f68307c
+[2026-03-26T20:26:08.660+0000] {subprocess.py:106} INFO - Sent encounter event: 5610dfe3-f87e-479e-bfd7-c9ef1731503e
+[2026-03-26T20:26:08.661+0000] {subprocess.py:106} INFO - Sent encounter event: d283541e-6188-431a-924a-9c1da1621534
+[2026-03-26T20:26:08.661+0000] {subprocess.py:106} INFO - Sent encounter event: 757acc76-9e7f-496e-94dc-a7190b4532d4
+[2026-03-26T20:26:08.661+0000] {subprocess.py:106} INFO - Sent encounter event: f61d8adc-d61c-4d3e-8d44-bce0b3d4faa0
+[2026-03-26T20:26:08.662+0000] {subprocess.py:106} INFO - Sent encounter event: 8f71906a-2e95-4db6-996b-ebc63c2df290
+[2026-03-26T20:26:08.662+0000] {subprocess.py:106} INFO - Sent encounter event: b1675514-069c-42c5-b11b-9fbf3fcf2eb5
+[2026-03-26T20:26:08.663+0000] {subprocess.py:106} INFO - Sent encounter event: aab36565-ba86-41a4-97d5-4c260cdb4c92
+[2026-03-26T20:26:08.663+0000] {subprocess.py:106} INFO - Sent encounter event: a76db312-cbcf-41be-bed1-f776fc286209
+[2026-03-26T20:26:08.663+0000] {subprocess.py:106} INFO - Sent encounter event: a26bd179-b818-4c72-8224-dab1b6b42f93
+[2026-03-26T20:26:08.663+0000] {subprocess.py:106} INFO - Sent encounter event: 3b35a1b3-3613-44bf-a541-99336d621c88
+[2026-03-26T20:26:08.664+0000] {subprocess.py:106} INFO - Sent encounter event: b7410fa9-174a-43df-829f-d74a15b7c70d
+[2026-03-26T20:26:08.664+0000] {subprocess.py:106} INFO - Sent encounter event: b566f0dc-552d-4d9c-8954-255531ecc336
+[2026-03-26T20:26:08.664+0000] {subprocess.py:106} INFO - Sent encounter event: 8115dea0-684f-4756-acea-162458e70dfa
+[2026-03-26T20:26:08.664+0000] {subprocess.py:106} INFO - Sent encounter event: 77170b3b-af63-48d9-9b26-b3aa5685cde4
+[2026-03-26T20:26:08.665+0000] {subprocess.py:106} INFO - Sent encounter event: 5194e7f0-3785-44f9-a8e2-dc7941319e0c
+[2026-03-26T20:26:08.665+0000] {subprocess.py:106} INFO - Sent encounter event: 52f7aab4-4a98-4ea0-be17-41e4bc6d0cb2
+[2026-03-26T20:26:08.665+0000] {subprocess.py:106} INFO - Sent encounter event: 27aa510d-7856-42cb-a075-bd2aca4c2749
+[2026-03-26T20:26:08.666+0000] {subprocess.py:106} INFO - Sent encounter event: df291bc5-6d38-44ea-8078-3130be3ec91c
+[2026-03-26T20:26:08.666+0000] {subprocess.py:106} INFO - Sent encounter event: 0c0fde47-0fcc-4377-9de2-547eca68cecf
+[2026-03-26T20:26:08.666+0000] {subprocess.py:106} INFO - Sent encounter event: e3b46dc6-b475-45cc-8e80-e765dfbf1614
+[2026-03-26T20:26:08.667+0000] {subprocess.py:106} INFO - Sent encounter event: 13682e6d-989c-48cb-a845-400dfa2e44b2
+[2026-03-26T20:26:08.667+0000] {subprocess.py:106} INFO - Sent encounter event: c981bb4e-82a9-45f2-b1b5-9e587f2011d5
+[2026-03-26T20:26:08.667+0000] {subprocess.py:106} INFO - Sent encounter event: 38395880-3ea7-4d86-826b-304a88850d48
+[2026-03-26T20:26:08.668+0000] {subprocess.py:106} INFO - Sent encounter event: 0bf8d30d-7560-4381-a386-a1c506cf943e
+[2026-03-26T20:26:08.668+0000] {subprocess.py:106} INFO - Sent encounter event: 1cb8f1cb-f2e2-4374-806f-5117fd0ce871
+[2026-03-26T20:26:21.227+0000] {subprocess.py:106} INFO - Sent encounter event: f04e6836-829f-4d1e-9534-33b3ff0d4a43
+[2026-03-26T20:26:21.228+0000] {subprocess.py:106} INFO - Sent encounter event: a186fcd3-44a4-4bb9-a283-4348a544d88a
+[2026-03-26T20:26:21.228+0000] {subprocess.py:106} INFO - Sent encounter event: 14475b75-c8e1-41a1-a4d6-20f43715389d
+[2026-03-26T20:26:21.228+0000] {subprocess.py:106} INFO - Sent encounter event: 63a4bf16-1388-46a9-8429-4c086b47208b
+[2026-03-26T20:26:21.229+0000] {subprocess.py:106} INFO - Sent encounter event: b224c5d7-d667-419c-b3d3-83dea30abb10
+[2026-03-26T20:26:21.229+0000] {subprocess.py:106} INFO - Sent encounter event: 8da05102-336e-47ef-8024-70d85bd4ebcc
+[2026-03-26T20:26:21.230+0000] {subprocess.py:106} INFO - Sent encounter event: fb6b3363-73a6-499b-8450-89f7b8b09f77
+[2026-03-26T20:26:21.230+0000] {subprocess.py:106} INFO - Sent encounter event: b9edc84e-4355-45e8-9eb6-d7f8784ba274
+[2026-03-26T20:26:21.230+0000] {subprocess.py:106} INFO - Sent encounter event: 421ac4f4-6880-4284-925d-3393d3a7caac
+[2026-03-26T20:26:21.231+0000] {subprocess.py:106} INFO - Sent encounter event: 193b0512-3589-4440-9020-827abc0a8ba0
+[2026-03-26T20:26:21.231+0000] {subprocess.py:106} INFO - Sent encounter event: 39db475a-633f-46ab-a9fa-35be61acf719
+[2026-03-26T20:26:21.231+0000] {subprocess.py:106} INFO - Sent encounter event: 00d09c4e-1d5f-4161-9fa7-75736f50b422
+[2026-03-26T20:26:21.232+0000] {subprocess.py:106} INFO - Sent encounter event: 80833da9-8edf-4a26-8ff4-c2224c508f36
+[2026-03-26T20:26:21.232+0000] {subprocess.py:106} INFO - Sent encounter event: f165d26d-4b6a-4d9e-bd26-d2d8a7c8bcf3
+[2026-03-26T20:26:21.232+0000] {subprocess.py:106} INFO - Sent encounter event: d5a33571-a229-48f9-a39f-4aff57012814
+[2026-03-26T20:26:21.233+0000] {subprocess.py:106} INFO - Sent encounter event: 10d4ce7e-6a30-45c4-bef9-35f84a3a285a
+[2026-03-26T20:26:21.233+0000] {subprocess.py:106} INFO - Sent encounter event: a6e50128-bf85-4cc6-ad4a-47b57a907e04
+[2026-03-26T20:26:21.233+0000] {subprocess.py:106} INFO - Sent encounter event: db1acf36-1922-4871-9263-703164e81dd8
+[2026-03-26T20:26:21.233+0000] {subprocess.py:106} INFO - Sent encounter event: b4b76649-91e6-4e23-a041-96295ed4df33
+[2026-03-26T20:26:21.234+0000] {subprocess.py:106} INFO - Sent encounter event: b8b79378-ed81-4497-8eb2-4b9da60ef536
+[2026-03-26T20:26:21.234+0000] {subprocess.py:106} INFO - Sent encounter event: 77059578-aca2-4d09-adcb-20cbc03399fb
+[2026-03-26T20:26:21.234+0000] {subprocess.py:106} INFO - Sent encounter event: 97f3ef9b-c229-4f81-91d2-8cba2d98a79c
+[2026-03-26T20:26:21.235+0000] {subprocess.py:106} INFO - Sent encounter event: 9b5af2b5-fc90-4720-be69-041a9862ecde
+[2026-03-26T20:26:21.235+0000] {subprocess.py:106} INFO - Sent encounter event: 7adb0bb7-d7d3-4220-adab-ddfc7c39dc5b
+[2026-03-26T20:26:21.235+0000] {subprocess.py:106} INFO - Sent encounter event: 2271df2b-7f24-4aeb-a663-8bb342e99b00
+[2026-03-26T20:26:21.236+0000] {subprocess.py:106} INFO - Sent encounter event: 2edad33b-ac8b-4e21-b3f4-dc5060847752
+[2026-03-26T20:26:21.236+0000] {subprocess.py:106} INFO - Sent encounter event: 04d6648f-8d67-4fa7-a3b5-b33fa26c9622
+[2026-03-26T20:26:21.236+0000] {subprocess.py:106} INFO - Sent encounter event: 4b5e969e-6cb2-45ac-ba94-e03341c305d9
+[2026-03-26T20:26:21.236+0000] {subprocess.py:106} INFO - Sent encounter event: 242e1338-d76a-4ba8-a544-63e1748a3d8b
+[2026-03-26T20:26:21.237+0000] {subprocess.py:106} INFO - Sent encounter event: 85072e57-df54-406a-83e1-9afb400a3fe2
+[2026-03-26T20:26:21.237+0000] {subprocess.py:106} INFO - Sent encounter event: bd28e337-9efe-4e4c-a7f1-bea1cba1204c
+[2026-03-26T20:26:21.237+0000] {subprocess.py:106} INFO - Sent encounter event: 4c3c69e4-c189-4ab9-b8ce-87384110cd6b
+[2026-03-26T20:26:21.238+0000] {subprocess.py:106} INFO - Sent encounter event: 32cf808f-068e-40fb-a2f3-8d70321ffd91
+[2026-03-26T20:26:21.238+0000] {subprocess.py:106} INFO - Sent encounter event: f4ac508f-1182-4af9-b38e-0322e1ac1dfb
+[2026-03-26T20:26:21.239+0000] {subprocess.py:106} INFO - Sent encounter event: adc24957-ab74-409a-ad96-428f680a8ba5
+[2026-03-26T20:26:21.239+0000] {subprocess.py:106} INFO - Sent encounter event: a6a6fa09-edc4-4dbd-a964-49732ff046f8
+[2026-03-26T20:26:21.240+0000] {subprocess.py:106} INFO - Sent encounter event: b172f1c2-137c-4a08-b4be-ff79fe8d9daf
+[2026-03-26T20:26:21.240+0000] {subprocess.py:106} INFO - Sent encounter event: 2052f9d9-fb09-4cdd-861d-30041580bb49
+[2026-03-26T20:26:21.240+0000] {subprocess.py:106} INFO - Sent encounter event: f9fdc33e-215b-4bf5-9890-59bfaa07dc61
+[2026-03-26T20:26:21.241+0000] {subprocess.py:106} INFO - Sent encounter event: 00e1e72b-5774-4786-bb1d-17b80e2dfec7
+[2026-03-26T20:26:21.241+0000] {subprocess.py:106} INFO - Sent encounter event: d636c48a-69e1-43db-a62d-93f928d33a0d
+[2026-03-26T20:26:21.242+0000] {subprocess.py:106} INFO - Sent encounter event: bd65010a-664a-402f-bbcc-17ae6cff873c
+[2026-03-26T20:26:21.242+0000] {subprocess.py:106} INFO - Sent encounter event: 0ec9f3ab-fb4b-4847-93ad-c627bc9a5cd4
+[2026-03-26T20:26:21.242+0000] {subprocess.py:106} INFO - Sent encounter event: 8178bc82-5586-4120-92d2-65f70f6cda10
+[2026-03-26T20:26:21.242+0000] {subprocess.py:106} INFO - Sent encounter event: e5708c67-a988-4d2d-8ded-47c23aab2024
+[2026-03-26T20:26:21.243+0000] {subprocess.py:106} INFO - Sent encounter event: d65fb59c-f6b7-407b-9bf0-ee2ff0979031
+[2026-03-26T20:26:21.243+0000] {subprocess.py:106} INFO - Sent encounter event: 4896ce52-cd86-4f52-ba7e-56dd319fc61f
+[2026-03-26T20:26:21.243+0000] {subprocess.py:106} INFO - Sent encounter event: 21304bd7-9eea-4acc-b72d-72b96a712ea2
+[2026-03-26T20:26:21.243+0000] {subprocess.py:106} INFO - Sent encounter event: b80e3c33-2e0a-420c-997b-eded3c906798
+[2026-03-26T20:26:21.244+0000] {subprocess.py:106} INFO - Sent encounter event: 9dc1d9a3-ded7-4793-834b-a16c34fcd400
+[2026-03-26T20:26:21.244+0000] {subprocess.py:106} INFO - Sent encounter event: cdd30a53-5062-4a4a-8732-3d829fca8220
+[2026-03-26T20:26:21.245+0000] {subprocess.py:106} INFO - Sent encounter event: b2bf0449-f66d-4e5c-a25d-42629d373c9f
+[2026-03-26T20:26:21.245+0000] {subprocess.py:106} INFO - Sent encounter event: 9245448d-b9ce-4427-b01f-6be57228fede
+[2026-03-26T20:26:21.245+0000] {subprocess.py:106} INFO - Sent encounter event: d5ebfd4a-b18f-4b0e-89c4-ea4439636a5e
+[2026-03-26T20:26:21.245+0000] {subprocess.py:106} INFO - Sent encounter event: 04b3e4a3-07c9-4fdd-9565-26d823b5ede5
+[2026-03-26T20:26:21.246+0000] {subprocess.py:106} INFO - Sent encounter event: 124a33e2-f76e-4076-98df-974a1170a16e
+[2026-03-26T20:26:21.246+0000] {subprocess.py:106} INFO - Sent encounter event: d6b36cab-0016-47fd-99fa-4be9bfbef497
+[2026-03-26T20:26:21.246+0000] {subprocess.py:106} INFO - Sent encounter event: 4a75c44f-f66e-41f9-9306-6907e955f303
+[2026-03-26T20:26:21.246+0000] {subprocess.py:106} INFO - Sent encounter event: 34f57ecb-c5a8-46bb-8e97-4d63a0ccc331
+[2026-03-26T20:26:21.247+0000] {subprocess.py:106} INFO - Sent encounter event: 0474bfe3-1ea4-4aa8-934c-af092b3b56ae
+[2026-03-26T20:26:21.247+0000] {subprocess.py:106} INFO - Sent encounter event: 69b80232-83c9-42d8-8469-04e821203b4b
+[2026-03-26T20:26:21.247+0000] {subprocess.py:106} INFO - Sent encounter event: 966711e1-2017-41ff-99e6-15516f9d69a0
+[2026-03-26T20:26:21.368+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-26T20:26:21.392+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-26T20:26:21.393+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=produce_encounter_events, run_id=manual__2026-03-26T20:25:31.450315+00:00, execution_date=20260326T202531, start_date=20260326T202532, end_date=20260326T202621
+[2026-03-26T20:26:29.392+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id b8cd5d7f-4db7-3e35-9435-6c40051f99fb
+[2026-03-26T20:26:29.439+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-26T20:26:29.459+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-26T20:26:29.462+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

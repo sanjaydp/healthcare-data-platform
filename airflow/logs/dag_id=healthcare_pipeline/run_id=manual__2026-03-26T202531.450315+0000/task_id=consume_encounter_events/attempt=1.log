@@ -1,0 +1,315 @@
+[2026-03-26T20:26:22.176+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T20:26:22.201+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [queued]>
+[2026-03-26T20:26:22.213+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [queued]>
+[2026-03-26T20:26:22.214+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T20:26:22.225+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): consume_encounter_events> on 2026-03-26 20:25:31.450315+00:00
+[2026-03-26T20:26:22.233+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'consume_encounter_events', 'manual__2026-03-26T20:25:31.450315+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmp4nda9vod']
+[2026-03-26T20:26:22.234+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=213) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T20:26:22.235+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask consume_encounter_events
+[2026-03-26T20:26:22.235+0000] {standard_task_runner.py:72} INFO - Started process 214 to run task
+[2026-03-26T20:26:22.298+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:25:31.450315+00:00 [running]> on host 9410531f96ad
+[2026-03-26T20:26:22.383+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='consume_encounter_events' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T20:25:31.450315+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T20:25:31.450315+00:00'
+[2026-03-26T20:26:22.388+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T20:26:22.391+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T20:26:22.392+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T20:26:30.392+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id defe52e4-8648-30e8-a835-47e345a48132
+[2026-03-26T20:26:30.393+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T20:26:30.404+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T20:26:30.405+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/pyspark &&         timeout 60 python stream_encounters_from_kafka.py\n        ']
+[2026-03-26T20:26:30.414+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T20:26:30.860+0000] {subprocess.py:106} INFO - WARNING: Using incubator modules: jdk.incubator.vector
+[2026-03-26T20:26:32.562+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.3.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-26T20:26:32.659+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2.5.2/cache
+[2026-03-26T20:26:32.660+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2.5.2/jars
+[2026-03-26T20:26:32.663+0000] {subprocess.py:106} INFO - org.apache.spark#spark-sql-kafka-0-10_2.13 added as a dependency
+[2026-03-26T20:26:32.664+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-8e096a74-487d-4c6b-bbca-872b4bd168bd;1.0
+[2026-03-26T20:26:32.665+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T20:26:41.904+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.13;4.1.1 in central
+[2026-03-26T20:26:42.223+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.1.1 in central
+[2026-03-26T20:26:42.459+0000] {subprocess.py:106} INFO - 	found org.apache.kafka#kafka-clients;3.9.1 in central
+[2026-03-26T20:26:42.685+0000] {subprocess.py:106} INFO - 	found org.lz4#lz4-java;1.8.0 in central
+[2026-03-26T20:26:42.922+0000] {subprocess.py:106} INFO - 	found org.xerial.snappy#snappy-java;1.1.10.8 in central
+[2026-03-26T20:26:44.399+0000] {subprocess.py:106} INFO - 	found org.slf4j#slf4j-api;2.0.17 in central
+[2026-03-26T20:26:45.785+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-runtime;3.4.2 in central
+[2026-03-26T20:26:45.948+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-api;3.4.2 in central
+[2026-03-26T20:26:46.191+0000] {subprocess.py:106} INFO - 	found com.google.code.findbugs#jsr305;3.0.0 in central
+[2026-03-26T20:26:46.431+0000] {subprocess.py:106} INFO - 	found org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 in central
+[2026-03-26T20:26:48.252+0000] {subprocess.py:106} INFO - 	found org.apache.commons#commons-pool2;2.12.1 in central
+[2026-03-26T20:26:48.322+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.13/4.1.1/spark-sql-kafka-0-10_2.13-4.1.1.jar ...
+[2026-03-26T20:26:48.569+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.13;4.1.1!spark-sql-kafka-0-10_2.13.jar (310ms)
+[2026-03-26T20:26:48.617+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.13/4.1.1/spark-token-provider-kafka-0-10_2.13-4.1.1.jar ...
+[2026-03-26T20:26:48.673+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.1.1!spark-token-provider-kafka-0-10_2.13.jar (103ms)
+[2026-03-26T20:26:48.733+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parallel-collections_2.13/1.2.0/scala-parallel-collections_2.13-1.2.0.jar ...
+[2026-03-26T20:26:48.975+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0!scala-parallel-collections_2.13.jar (302ms)
+[2026-03-26T20:26:49.030+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.9.1/kafka-clients-3.9.1.jar ...
+[2026-03-26T20:26:49.692+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.kafka#kafka-clients;3.9.1!kafka-clients.jar (716ms)
+[2026-03-26T20:26:49.750+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2026-03-26T20:26:49.815+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (122ms)
+[2026-03-26T20:26:49.894+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar ...
+[2026-03-26T20:26:49.956+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.12.1!commons-pool2.jar (139ms)
+[2026-03-26T20:26:50.011+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.4.2/hadoop-client-runtime-3.4.2.jar ...
+[2026-03-26T20:26:51.763+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.4.2!hadoop-client-runtime.jar (1807ms)
+[2026-03-26T20:26:51.824+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2026-03-26T20:26:51.945+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (182ms)
+[2026-03-26T20:26:52.002+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.8/snappy-java-1.1.10.8.jar ...
+[2026-03-26T20:26:52.226+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.8!snappy-java.jar(bundle) (281ms)
+[2026-03-26T20:26:52.305+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar ...
+[2026-03-26T20:26:52.359+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.slf4j#slf4j-api;2.0.17!slf4j-api.jar (133ms)
+[2026-03-26T20:26:52.413+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.4.2/hadoop-client-api-3.4.2.jar ...
+[2026-03-26T20:26:53.335+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.4.2!hadoop-client-api.jar (975ms)
+[2026-03-26T20:26:53.336+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 15594ms :: artifacts dl 5077ms
+[2026-03-26T20:26:53.336+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-26T20:26:53.337+0000] {subprocess.py:106} INFO - 	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2026-03-26T20:26:53.337+0000] {subprocess.py:106} INFO - 	org.apache.commons#commons-pool2;2.12.1 from central in [default]
+[2026-03-26T20:26:53.338+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-api;3.4.2 from central in [default]
+[2026-03-26T20:26:53.339+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-runtime;3.4.2 from central in [default]
+[2026-03-26T20:26:53.339+0000] {subprocess.py:106} INFO - 	org.apache.kafka#kafka-clients;3.9.1 from central in [default]
+[2026-03-26T20:26:53.340+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.13;4.1.1 from central in [default]
+[2026-03-26T20:26:53.340+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.13;4.1.1 from central in [default]
+[2026-03-26T20:26:53.341+0000] {subprocess.py:106} INFO - 	org.lz4#lz4-java;1.8.0 from central in [default]
+[2026-03-26T20:26:53.341+0000] {subprocess.py:106} INFO - 	org.scala-lang.modules#scala-parallel-collections_2.13;1.2.0 from central in [default]
+[2026-03-26T20:26:53.341+0000] {subprocess.py:106} INFO - 	org.slf4j#slf4j-api;2.0.17 from central in [default]
+[2026-03-26T20:26:53.342+0000] {subprocess.py:106} INFO - 	org.xerial.snappy#snappy-java;1.1.10.8 from central in [default]
+[2026-03-26T20:26:53.342+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:26:53.343+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-26T20:26:53.343+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-26T20:26:53.344+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:26:53.345+0000] {subprocess.py:106} INFO - 	|      default     |   11  |   11  |   11  |   0   ||   11  |   11  |
+[2026-03-26T20:26:53.345+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:26:53.346+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-8e096a74-487d-4c6b-bbca-872b4bd168bd
+[2026-03-26T20:26:53.346+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T20:26:54.256+0000] {subprocess.py:106} INFO - 	11 artifacts copied, 0 already retrieved (62936kB/912ms)
+[2026-03-26T20:26:54.583+0000] {subprocess.py:106} INFO - 26/03/26 20:26:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-26T20:26:54.906+0000] {subprocess.py:106} INFO - Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[2026-03-26T20:26:54.907+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-26T20:26:54.908+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-26T20:27:05.325+0000] {subprocess.py:106} INFO - 26/03/26 20:27:05 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2026-03-26T20:27:05.687+0000] {subprocess.py:106} INFO - 26/03/26 20:27:05 ERROR MicroBatchExecution: Query [id = 75a3fe9f-5530-4f7a-9dea-08f6978e704b, runId = 0c03990a-b05e-42b4-a270-1d420a899719] terminated with error
+[2026-03-26T20:27:05.688+0000] {subprocess.py:106} INFO - java.lang.NoClassDefFoundError: org/apache/spark/sql/connector/read/streaming/SupportsRealTimeMode
+[2026-03-26T20:27:05.689+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+[2026-03-26T20:27:05.689+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+[2026-03-26T20:27:05.689+0000] {subprocess.py:106} INFO - 	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+[2026-03-26T20:27:05.690+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
+[2026-03-26T20:27:05.690+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
+[2026-03-26T20:27:05.690+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
+[2026-03-26T20:27:05.691+0000] {subprocess.py:106} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+[2026-03-26T20:27:05.691+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
+[2026-03-26T20:27:05.692+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2026-03-26T20:27:05.692+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2026-03-26T20:27:05.692+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaScan.toMicroBatchStream(KafkaSourceProvider.scala:502)
+[2026-03-26T20:27:05.692+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.$anonfun$applyOrElse$4(MicroBatchExecution.scala:192)
+[2026-03-26T20:27:05.693+0000] {subprocess.py:106} INFO - 	at scala.collection.mutable.HashMap.getOrElseUpdate(HashMap.scala:469)
+[2026-03-26T20:27:05.693+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.applyOrElse(MicroBatchExecution.scala:183)
+[2026-03-26T20:27:05.693+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.applyOrElse(MicroBatchExecution.scala:165)
+[2026-03-26T20:27:05.694+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:470)
+[2026-03-26T20:27:05.694+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)
+[2026-03-26T20:27:05.694+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:470)
+[2026-03-26T20:27:05.695+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.695+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.696+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.696+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.696+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.697+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.697+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.697+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.697+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.698+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.698+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.698+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.700+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.700+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.701+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.701+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.702+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.702+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.703+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.703+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.703+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.704+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.704+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.705+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.705+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.706+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.706+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.706+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.707+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.707+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.707+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.708+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.708+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.709+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.709+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.709+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:446)
+[2026-03-26T20:27:05.710+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transform(TreeNode.scala:414)
+[2026-03-26T20:27:05.710+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan$lzycompute(MicroBatchExecution.scala:165)
+[2026-03-26T20:27:05.710+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan(MicroBatchExecution.scala:145)
+[2026-03-26T20:27:05.711+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:325)
+[2026-03-26T20:27:05.711+0000] {subprocess.py:106} INFO - 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+[2026-03-26T20:27:05.711+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+[2026-03-26T20:27:05.712+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:311)
+[2026-03-26T20:27:05.712+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:226)
+[2026-03-26T20:27:05.712+0000] {subprocess.py:106} INFO - Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.connector.read.streaming.SupportsRealTimeMode
+[2026-03-26T20:27:05.713+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+[2026-03-26T20:27:05.713+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2026-03-26T20:27:05.713+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2026-03-26T20:27:05.714+0000] {subprocess.py:106} INFO - 	... 62 more
+[2026-03-26T20:27:05.714+0000] {subprocess.py:106} INFO - Exception in thread "stream execution thread for [id = 75a3fe9f-5530-4f7a-9dea-08f6978e704b, runId = 0c03990a-b05e-42b4-a270-1d420a899719]" java.lang.NoClassDefFoundError: org/apache/spark/sql/connector/read/streaming/SupportsRealTimeMode
+[2026-03-26T20:27:05.714+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+[2026-03-26T20:27:05.715+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1017)
+[2026-03-26T20:27:05.715+0000] {subprocess.py:106} INFO - 	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
+[2026-03-26T20:27:05.715+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.defineClass(URLClassLoader.java:524)
+[2026-03-26T20:27:05.716+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:427)
+[2026-03-26T20:27:05.716+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader$1.run(URLClassLoader.java:421)
+[2026-03-26T20:27:05.716+0000] {subprocess.py:106} INFO - 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+[2026-03-26T20:27:05.717+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:420)
+[2026-03-26T20:27:05.717+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2026-03-26T20:27:05.717+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2026-03-26T20:27:05.718+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaScan.toMicroBatchStream(KafkaSourceProvider.scala:502)
+[2026-03-26T20:27:05.718+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.$anonfun$applyOrElse$4(MicroBatchExecution.scala:192)
+[2026-03-26T20:27:05.719+0000] {subprocess.py:106} INFO - 	at scala.collection.mutable.HashMap.getOrElseUpdate(HashMap.scala:469)
+[2026-03-26T20:27:05.719+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.applyOrElse(MicroBatchExecution.scala:183)
+[2026-03-26T20:27:05.719+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution$$anonfun$1.applyOrElse(MicroBatchExecution.scala:165)
+[2026-03-26T20:27:05.720+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:470)
+[2026-03-26T20:27:05.720+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:86)
+[2026-03-26T20:27:05.721+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:470)
+[2026-03-26T20:27:05.722+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.722+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.722+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.723+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.723+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.723+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.724+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.724+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.724+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.725+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.725+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.725+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.726+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.726+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.726+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.727+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.727+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.727+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.728+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.728+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.728+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.729+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.729+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.729+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.730+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.730+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$3(TreeNode.scala:475)
+[2026-03-26T20:27:05.731+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren(TreeNode.scala:1231)
+[2026-03-26T20:27:05.731+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.UnaryLike.mapChildren$(TreeNode.scala:1230)
+[2026-03-26T20:27:05.731+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.Project.mapChildren(basicLogicalOperators.scala:72)
+[2026-03-26T20:27:05.732+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:475)
+[2026-03-26T20:27:05.732+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.732+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:360)
+[2026-03-26T20:27:05.733+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:356)
+[2026-03-26T20:27:05.733+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.733+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:37)
+[2026-03-26T20:27:05.734+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:446)
+[2026-03-26T20:27:05.734+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.catalyst.trees.TreeNode.transform(TreeNode.scala:414)
+[2026-03-26T20:27:05.734+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan$lzycompute(MicroBatchExecution.scala:165)
+[2026-03-26T20:27:05.735+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan(MicroBatchExecution.scala:145)
+[2026-03-26T20:27:05.735+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:325)
+[2026-03-26T20:27:05.736+0000] {subprocess.py:106} INFO - 	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+[2026-03-26T20:27:05.736+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:804)
+[2026-03-26T20:27:05.736+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:311)
+[2026-03-26T20:27:05.737+0000] {subprocess.py:106} INFO - 	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:226)
+[2026-03-26T20:27:05.737+0000] {subprocess.py:106} INFO - Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.connector.read.streaming.SupportsRealTimeMode
+[2026-03-26T20:27:05.738+0000] {subprocess.py:106} INFO - 	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+[2026-03-26T20:27:05.738+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+[2026-03-26T20:27:05.739+0000] {subprocess.py:106} INFO - 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+[2026-03-26T20:27:05.739+0000] {subprocess.py:106} INFO - 	... 62 more
+[2026-03-26T20:27:05.753+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-03-26T20:27:05.754+0000] {subprocess.py:106} INFO -   File "/opt/project/pyspark/stream_encounters_from_kafka.py", line 52, in <module>
+[2026-03-26T20:27:05.758+0000] {subprocess.py:106} INFO -     query.awaitTermination()
+[2026-03-26T20:27:05.758+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pyspark/sql/streaming/query.py", line 225, in awaitTermination
+[2026-03-26T20:27:05.758+0000] {subprocess.py:106} INFO -     return self._jsq.awaitTermination()
+[2026-03-26T20:27:05.759+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-03-26T20:27:05.759+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1362, in __call__
+[2026-03-26T20:27:05.760+0000] {subprocess.py:106} INFO -     return_value = get_return_value(
+[2026-03-26T20:27:05.760+0000] {subprocess.py:106} INFO -                    ^^^^^^^^^^^^^^^^^
+[2026-03-26T20:27:05.760+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 288, in deco
+[2026-03-26T20:27:05.761+0000] {subprocess.py:106} INFO -     raise converted from None
+[2026-03-26T20:27:05.764+0000] {subprocess.py:106} INFO - pyspark.errors.exceptions.captured.StreamingQueryException: [STREAM_FAILED] Query [id = 75a3fe9f-5530-4f7a-9dea-08f6978e704b, runId = 0c03990a-b05e-42b4-a270-1d420a899719] terminated with exception: org/apache/spark/sql/connector/read/streaming/SupportsRealTimeMode SQLSTATE: XXKST
+[2026-03-26T20:27:05.764+0000] {subprocess.py:106} INFO - === Streaming Query ===
+[2026-03-26T20:27:05.765+0000] {subprocess.py:106} INFO - Identifier: [id = 75a3fe9f-5530-4f7a-9dea-08f6978e704b, runId = 0c03990a-b05e-42b4-a270-1d420a899719]
+[2026-03-26T20:27:05.765+0000] {subprocess.py:106} INFO - Current Committed Offsets: {}
+[2026-03-26T20:27:05.766+0000] {subprocess.py:106} INFO - Current Available Offsets: {}
+[2026-03-26T20:27:05.766+0000] {subprocess.py:106} INFO - 
+[2026-03-26T20:27:05.766+0000] {subprocess.py:106} INFO - Current State: INITIALIZING
+[2026-03-26T20:27:05.766+0000] {subprocess.py:106} INFO - Thread State: RUNNABLE
+[2026-03-26T20:27:06.441+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-03-26T20:27:06.454+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-26T20:27:14.458+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id defe52e4-8648-30e8-a835-47e345a48132
+[2026-03-26T20:27:14.459+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=healthcare_pipeline, task_id=consume_encounter_events, run_id=manual__2026-03-26T20:25:31.450315+00:00, execution_date=20260326T202531, start_date=20260326T202622, end_date=20260326T202706
+[2026-03-26T20:27:14.488+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-26T20:27:14.491+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 3 for task consume_encounter_events (Bash command failed. The command returned a non-zero exit code 1.; 214)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-26T20:27:14.532+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-03-26T20:27:14.555+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-26T20:27:14.560+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

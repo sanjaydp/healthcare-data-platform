@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from airflow import DAG
-from airflow.providers.standard.operators.bash import BashOperator
+from airflow.operators.bash import BashOperator
 
 default_args = {
     "owner": "sanjay",
@@ -10,7 +10,7 @@ default_args = {
 with DAG(
     dag_id="healthcare_pipeline",
     default_args=default_args,
-    start_date=datetime(2026, 3, 25),
+    start_date=datetime(2026, 2, 10),
     schedule=None,
     catchup=False,
     tags=["healthcare", "kafka", "snowflake", "dbt"],
@@ -51,18 +51,18 @@ with DAG(
     run_dbt_models = BashOperator(
         task_id="run_dbt_models",
         bash_command="""
-        cd /opt/project/dbt/healthcare_dbt && \
-        rm -rf target logs dbt_packages && \
-        dbt run --no-partial-parse --profiles-dir /opt/airflow/.dbt
+        docker exec dbt dbt run \
+        --project-dir /usr/app/dbt/healthcare_dbt \
+        --profiles-dir /usr/app/airflow/dbt_profiles
         """,
     )
 
     run_dbt_tests = BashOperator(
         task_id="run_dbt_tests",
         bash_command="""
-        cd /opt/project/dbt/healthcare_dbt && \
-        rm -rf target logs && \
-        dbt test --no-partial-parse --profiles-dir /opt/airflow/.dbt
+        docker exec dbt dbt test \
+        --project-dir /usr/app/dbt/healthcare_dbt \
+        --profiles-dir /usr/app/airflow/dbt_profiles
         """,
     )
 

@@ -1,0 +1,29 @@
+[2026-03-26T22:20:19.360+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T22:20:19.380+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-26T22:18:39.423845+00:00 [queued]>
+[2026-03-26T22:20:19.386+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-26T22:18:39.423845+00:00 [queued]>
+[2026-03-26T22:20:19.387+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T22:20:19.395+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): load_raw_to_snowflake> on 2026-03-26 22:18:39.423845+00:00
+[2026-03-26T22:20:19.402+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'load_raw_to_snowflake', 'manual__2026-03-26T22:18:39.423845+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmp25v1t70g']
+[2026-03-26T22:20:19.403+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=592) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T22:20:19.404+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask load_raw_to_snowflake
+[2026-03-26T22:20:19.404+0000] {standard_task_runner.py:72} INFO - Started process 593 to run task
+[2026-03-26T22:20:19.440+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.load_raw_to_snowflake manual__2026-03-26T22:18:39.423845+00:00 [running]> on host a5ac944459b7
+[2026-03-26T22:20:19.497+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='load_raw_to_snowflake' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T22:18:39.423845+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T22:18:39.423845+00:00'
+[2026-03-26T22:20:19.501+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T22:20:19.503+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T22:20:19.505+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T22:20:27.514+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 731d3ef9-f7d6-3c0e-9603-1cb455e5bf60
+[2026-03-26T22:20:27.515+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T22:20:27.532+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T22:20:27.534+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/scripts &&         python load_s3_pyspark_to_snowflake.py\n        ']
+[2026-03-26T22:20:27.542+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T22:20:56.832+0000] {subprocess.py:106} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2026-03-26T22:20:58.222+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-26T22:20:58.223+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-26T22:20:58.463+0000] {subprocess.py:106} INFO - 26/03/26 22:20:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-26T22:21:07.211+0000] {subprocess.py:106} INFO - 26/03/26 22:21:07 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2026-03-26T22:21:13.801+0000] {subprocess.py:106} INFO - [Stage 7:>                                                          (0 + 1) / 1]                                                                                Cleaned file written to: /tmp/tmpgtknan52/clean/patients
+[2026-03-26T22:21:13.803+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmpgtknan52/clean/encounters
+[2026-03-26T22:21:13.803+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmpgtknan52/clean/conditions
+[2026-03-26T22:21:13.804+0000] {subprocess.py:106} INFO - Cleaned file written to: /tmp/tmpgtknan52/clean/observations
+[2026-03-26T22:21:25.630+0000] {subprocess.py:106} INFO - Great Expectations validation passed for all datasets.

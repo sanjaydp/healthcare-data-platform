@@ -1,0 +1,166 @@
+[2026-03-26T20:38:11.906+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T20:38:11.931+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:37:24.811930+00:00 [queued]>
+[2026-03-26T20:38:11.940+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:37:24.811930+00:00 [queued]>
+[2026-03-26T20:38:11.942+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T20:38:11.953+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): consume_encounter_events> on 2026-03-26 20:37:24.811930+00:00
+[2026-03-26T20:38:11.959+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'consume_encounter_events', 'manual__2026-03-26T20:37:24.811930+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmphyhas3yf']
+[2026-03-26T20:38:11.961+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask consume_encounter_events
+[2026-03-26T20:38:11.961+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=213) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T20:38:11.962+0000] {standard_task_runner.py:72} INFO - Started process 214 to run task
+[2026-03-26T20:38:12.001+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T20:37:24.811930+00:00 [running]> on host d8f2276ddfcd
+[2026-03-26T20:38:12.063+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='consume_encounter_events' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T20:37:24.811930+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T20:37:24.811930+00:00'
+[2026-03-26T20:38:12.069+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T20:38:12.071+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T20:38:12.072+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T20:38:20.082+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 238700e1-e4df-33a0-939d-9fe044c71554
+[2026-03-26T20:38:20.084+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T20:38:20.096+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T20:38:20.097+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/pyspark &&         timeout 60 python stream_encounters_from_kafka.py\n        ']
+[2026-03-26T20:38:20.107+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T20:38:20.645+0000] {subprocess.py:106} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2026-03-26T20:38:23.709+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-26T20:38:23.886+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2026-03-26T20:38:23.888+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2026-03-26T20:38:23.894+0000] {subprocess.py:106} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2026-03-26T20:38:23.896+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-cf5f104f-bc8d-439e-891f-95135c0d484b;1.0
+[2026-03-26T20:38:23.897+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T20:38:35.068+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 in central
+[2026-03-26T20:38:35.343+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 in central
+[2026-03-26T20:38:35.561+0000] {subprocess.py:106} INFO - 	found org.apache.kafka#kafka-clients;3.4.1 in central
+[2026-03-26T20:38:35.778+0000] {subprocess.py:106} INFO - 	found org.lz4#lz4-java;1.8.0 in central
+[2026-03-26T20:38:36.000+0000] {subprocess.py:106} INFO - 	found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2026-03-26T20:38:36.654+0000] {subprocess.py:106} INFO - 	found org.slf4j#slf4j-api;2.0.7 in central
+[2026-03-26T20:38:42.636+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2026-03-26T20:38:42.803+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2026-03-26T20:38:43.945+0000] {subprocess.py:106} INFO - 	found commons-logging#commons-logging;1.1.3 in central
+[2026-03-26T20:38:44.062+0000] {subprocess.py:106} INFO - 	found com.google.code.findbugs#jsr305;3.0.0 in central
+[2026-03-26T20:38:45.349+0000] {subprocess.py:106} INFO - 	found org.apache.commons#commons-pool2;2.11.1 in central
+[2026-03-26T20:38:45.416+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.1/spark-sql-kafka-0-10_2.12-3.5.1.jar ...
+[2026-03-26T20:38:45.649+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1!spark-sql-kafka-0-10_2.12.jar (293ms)
+[2026-03-26T20:38:45.700+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.1/spark-token-provider-kafka-0-10_2.12-3.5.1.jar ...
+[2026-03-26T20:38:45.753+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1!spark-token-provider-kafka-0-10_2.12.jar (103ms)
+[2026-03-26T20:38:45.808+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar ...
+[2026-03-26T20:38:46.762+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.kafka#kafka-clients;3.4.1!kafka-clients.jar (1008ms)
+[2026-03-26T20:38:46.822+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2026-03-26T20:38:46.876+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (113ms)
+[2026-03-26T20:38:46.930+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2026-03-26T20:38:47.018+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (141ms)
+[2026-03-26T20:38:47.077+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+[2026-03-26T20:38:49.025+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.4!hadoop-client-runtime.jar (2005ms)
+[2026-03-26T20:38:49.087+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2026-03-26T20:38:49.177+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (150ms)
+[2026-03-26T20:38:49.240+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.3/snappy-java-1.1.10.3.jar ...
+[2026-03-26T20:38:49.373+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.3!snappy-java.jar(bundle) (196ms)
+[2026-03-26T20:38:49.431+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar ...
+[2026-03-26T20:38:49.489+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.slf4j#slf4j-api;2.0.7!slf4j-api.jar (114ms)
+[2026-03-26T20:38:49.550+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.4/hadoop-client-api-3.3.4.jar ...
+[2026-03-26T20:38:50.551+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.4!hadoop-client-api.jar (1062ms)
+[2026-03-26T20:38:50.605+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2026-03-26T20:38:50.659+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (107ms)
+[2026-03-26T20:38:50.660+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 21458ms :: artifacts dl 5306ms
+[2026-03-26T20:38:50.661+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-26T20:38:50.661+0000] {subprocess.py:106} INFO - 	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2026-03-26T20:38:50.661+0000] {subprocess.py:106} INFO - 	commons-logging#commons-logging;1.1.3 from central in [default]
+[2026-03-26T20:38:50.662+0000] {subprocess.py:106} INFO - 	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2026-03-26T20:38:50.662+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2026-03-26T20:38:50.662+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2026-03-26T20:38:50.663+0000] {subprocess.py:106} INFO - 	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+[2026-03-26T20:38:50.663+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 from central in [default]
+[2026-03-26T20:38:50.663+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 from central in [default]
+[2026-03-26T20:38:50.664+0000] {subprocess.py:106} INFO - 	org.lz4#lz4-java;1.8.0 from central in [default]
+[2026-03-26T20:38:50.664+0000] {subprocess.py:106} INFO - 	org.slf4j#slf4j-api;2.0.7 from central in [default]
+[2026-03-26T20:38:50.664+0000] {subprocess.py:106} INFO - 	org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2026-03-26T20:38:50.665+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:38:50.665+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-26T20:38:50.665+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-26T20:38:50.666+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:38:50.666+0000] {subprocess.py:106} INFO - 	|      default     |   11  |   11  |   11  |   0   ||   11  |   11  |
+[2026-03-26T20:38:50.666+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T20:38:50.667+0000] {subprocess.py:106} INFO - 
+[2026-03-26T20:38:50.667+0000] {subprocess.py:106} INFO - :: problems summary ::
+[2026-03-26T20:38:50.667+0000] {subprocess.py:106} INFO - :::: ERRORS
+[2026-03-26T20:38:50.668+0000] {subprocess.py:106} INFO - 	Server access error at url https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-main/3.3.4/hadoop-main-3.3.4.jar (javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake)
+[2026-03-26T20:38:50.668+0000] {subprocess.py:106} INFO - 
+[2026-03-26T20:38:50.669+0000] {subprocess.py:106} INFO - 
+[2026-03-26T20:38:50.669+0000] {subprocess.py:106} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2026-03-26T20:38:50.669+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-cf5f104f-bc8d-439e-891f-95135c0d484b
+[2026-03-26T20:38:50.670+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T20:38:50.973+0000] {subprocess.py:106} INFO - 	11 artifacts copied, 0 already retrieved (56767kB/309ms)
+[2026-03-26T20:38:51.355+0000] {subprocess.py:106} INFO - 26/03/26 20:38:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-26T20:38:51.663+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-26T20:38:51.664+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-26T20:38:59.605+0000] {subprocess.py:106} INFO - 26/03/26 20:38:59 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2026-03-26T20:39:00.341+0000] {subprocess.py:106} INFO - 26/03/26 20:39:00 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+[2026-03-26T20:39:18.469+0000] {subprocess.py:110} INFO - Command exited with return code 124
+[2026-03-26T20:39:18.483+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 124.
+[2026-03-26T20:39:26.486+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 238700e1-e4df-33a0-939d-9fe044c71554
+[2026-03-26T20:39:26.488+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=healthcare_pipeline, task_id=consume_encounter_events, run_id=manual__2026-03-26T20:37:24.811930+00:00, execution_date=20260326T203724, start_date=20260326T203811, end_date=20260326T203918
+[2026-03-26T20:39:26.526+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-26T20:39:26.528+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 3 for task consume_encounter_events (Bash command failed. The command returned a non-zero exit code 124.; 214)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 124.
+[2026-03-26T20:39:26.564+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-03-26T20:39:26.589+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-26T20:39:26.594+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

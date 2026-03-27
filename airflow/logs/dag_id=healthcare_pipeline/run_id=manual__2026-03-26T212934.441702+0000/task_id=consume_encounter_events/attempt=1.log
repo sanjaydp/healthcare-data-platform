@@ -1,0 +1,89 @@
+[2026-03-26T21:30:19.588+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T21:30:19.622+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T21:29:34.441702+00:00 [queued]>
+[2026-03-26T21:30:19.640+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T21:29:34.441702+00:00 [queued]>
+[2026-03-26T21:30:19.641+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T21:30:19.654+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): consume_encounter_events> on 2026-03-26 21:29:34.441702+00:00
+[2026-03-26T21:30:19.663+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'consume_encounter_events', 'manual__2026-03-26T21:29:34.441702+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpgi0gyu72']
+[2026-03-26T21:30:19.668+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=223) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T21:30:19.680+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask consume_encounter_events
+[2026-03-26T21:30:19.681+0000] {standard_task_runner.py:72} INFO - Started process 224 to run task
+[2026-03-26T21:30:19.965+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.consume_encounter_events manual__2026-03-26T21:29:34.441702+00:00 [running]> on host 0e09f779dd92
+[2026-03-26T21:30:20.142+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='consume_encounter_events' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T21:29:34.441702+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T21:29:34.441702+00:00'
+[2026-03-26T21:30:20.152+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T21:30:20.154+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T21:30:20.156+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T21:30:28.143+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 8c379b19-ab53-38af-a339-00c517df4865
+[2026-03-26T21:30:28.144+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T21:30:28.154+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T21:30:28.155+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/pyspark &&         timeout 60 python stream_encounters_from_kafka.py\n        ']
+[2026-03-26T21:30:28.164+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T21:30:28.781+0000] {subprocess.py:106} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2026-03-26T21:30:33.341+0000] {subprocess.py:106} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.12/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-03-26T21:30:33.441+0000] {subprocess.py:106} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2026-03-26T21:30:33.442+0000] {subprocess.py:106} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2026-03-26T21:30:33.445+0000] {subprocess.py:106} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2026-03-26T21:30:33.446+0000] {subprocess.py:106} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-d0b69a4a-c961-42ad-b3a8-6b96430ddcaf;1.0
+[2026-03-26T21:30:33.447+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T21:30:35.441+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 in central
+[2026-03-26T21:30:36.005+0000] {subprocess.py:106} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 in central
+[2026-03-26T21:30:36.243+0000] {subprocess.py:106} INFO - 	found org.apache.kafka#kafka-clients;3.4.1 in central
+[2026-03-26T21:30:36.465+0000] {subprocess.py:106} INFO - 	found org.lz4#lz4-java;1.8.0 in central
+[2026-03-26T21:30:36.669+0000] {subprocess.py:106} INFO - 	found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2026-03-26T21:30:37.315+0000] {subprocess.py:106} INFO - 	found org.slf4j#slf4j-api;2.0.7 in central
+[2026-03-26T21:30:38.441+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2026-03-26T21:30:38.610+0000] {subprocess.py:106} INFO - 	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2026-03-26T21:30:39.600+0000] {subprocess.py:106} INFO - 	found commons-logging#commons-logging;1.1.3 in central
+[2026-03-26T21:30:39.739+0000] {subprocess.py:106} INFO - 	found com.google.code.findbugs#jsr305;3.0.0 in central
+[2026-03-26T21:30:41.194+0000] {subprocess.py:106} INFO - 	found org.apache.commons#commons-pool2;2.11.1 in central
+[2026-03-26T21:30:41.265+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.1/spark-sql-kafka-0-10_2.12-3.5.1.jar ...
+[2026-03-26T21:30:41.544+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1!spark-sql-kafka-0-10_2.12.jar (342ms)
+[2026-03-26T21:30:41.600+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.1/spark-token-provider-kafka-0-10_2.12-3.5.1.jar ...
+[2026-03-26T21:30:41.673+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1!spark-token-provider-kafka-0-10_2.12.jar (129ms)
+[2026-03-26T21:30:41.739+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar ...
+[2026-03-26T21:30:42.886+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.kafka#kafka-clients;3.4.1!kafka-clients.jar (1211ms)
+[2026-03-26T21:30:42.938+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2026-03-26T21:30:42.998+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (112ms)
+[2026-03-26T21:30:43.063+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2026-03-26T21:30:43.124+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (125ms)
+[2026-03-26T21:30:43.179+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+[2026-03-26T21:30:45.299+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.4!hadoop-client-runtime.jar (2174ms)
+[2026-03-26T21:30:45.361+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2026-03-26T21:30:45.472+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (171ms)
+[2026-03-26T21:30:45.536+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.3/snappy-java-1.1.10.3.jar ...
+[2026-03-26T21:30:45.738+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.3!snappy-java.jar(bundle) (266ms)
+[2026-03-26T21:30:45.797+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar ...
+[2026-03-26T21:30:45.857+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.slf4j#slf4j-api;2.0.7!slf4j-api.jar (118ms)
+[2026-03-26T21:30:45.914+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.4/hadoop-client-api-3.3.4.jar ...
+[2026-03-26T21:30:47.059+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.4!hadoop-client-api.jar (1200ms)
+[2026-03-26T21:30:47.119+0000] {subprocess.py:106} INFO - downloading https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar ...
+[2026-03-26T21:30:47.177+0000] {subprocess.py:106} INFO - 	[SUCCESSFUL ] commons-logging#commons-logging;1.1.3!commons-logging.jar (118ms)
+[2026-03-26T21:30:47.179+0000] {subprocess.py:106} INFO - :: resolution report :: resolve 7755ms :: artifacts dl 5976ms
+[2026-03-26T21:30:47.179+0000] {subprocess.py:106} INFO - 	:: modules in use:
+[2026-03-26T21:30:47.180+0000] {subprocess.py:106} INFO - 	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2026-03-26T21:30:47.180+0000] {subprocess.py:106} INFO - 	commons-logging#commons-logging;1.1.3 from central in [default]
+[2026-03-26T21:30:47.181+0000] {subprocess.py:106} INFO - 	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2026-03-26T21:30:47.181+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2026-03-26T21:30:47.182+0000] {subprocess.py:106} INFO - 	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2026-03-26T21:30:47.182+0000] {subprocess.py:106} INFO - 	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+[2026-03-26T21:30:47.183+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.1 from central in [default]
+[2026-03-26T21:30:47.183+0000] {subprocess.py:106} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.1 from central in [default]
+[2026-03-26T21:30:47.184+0000] {subprocess.py:106} INFO - 	org.lz4#lz4-java;1.8.0 from central in [default]
+[2026-03-26T21:30:47.184+0000] {subprocess.py:106} INFO - 	org.slf4j#slf4j-api;2.0.7 from central in [default]
+[2026-03-26T21:30:47.185+0000] {subprocess.py:106} INFO - 	org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2026-03-26T21:30:47.185+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T21:30:47.186+0000] {subprocess.py:106} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-03-26T21:30:47.186+0000] {subprocess.py:106} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-03-26T21:30:47.186+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T21:30:47.187+0000] {subprocess.py:106} INFO - 	|      default     |   11  |   11  |   11  |   0   ||   11  |   11  |
+[2026-03-26T21:30:47.187+0000] {subprocess.py:106} INFO - 	---------------------------------------------------------------------
+[2026-03-26T21:30:47.188+0000] {subprocess.py:106} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-d0b69a4a-c961-42ad-b3a8-6b96430ddcaf
+[2026-03-26T21:30:47.188+0000] {subprocess.py:106} INFO - 	confs: [default]
+[2026-03-26T21:30:48.685+0000] {subprocess.py:106} INFO - 	11 artifacts copied, 0 already retrieved (56767kB/1502ms)
+[2026-03-26T21:30:48.838+0000] {subprocess.py:106} INFO - 26/03/26 21:30:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-03-26T21:30:48.532+0000] {subprocess.py:106} INFO - Setting default log level to "WARN".
+[2026-03-26T21:30:48.533+0000] {subprocess.py:106} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-03-26T21:30:57.141+0000] {subprocess.py:106} INFO - 26/03/26 21:30:57 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+[2026-03-26T21:30:58.444+0000] {subprocess.py:106} INFO - 26/03/26 21:30:58 WARN AdminClientConfig: These configurations '[key.deserializer, value.deserializer, enable.auto.commit, max.poll.records, auto.offset.reset]' were supplied but are not used yet.
+[2026-03-26T21:31:01.558+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-03-26T21:31:01.610+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-26T21:31:01.611+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=healthcare_pipeline, task_id=consume_encounter_events, run_id=manual__2026-03-26T21:29:34.441702+00:00, execution_date=20260326T212934, start_date=20260326T213019, end_date=20260326T213101

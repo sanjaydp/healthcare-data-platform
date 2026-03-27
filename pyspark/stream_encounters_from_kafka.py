@@ -15,15 +15,11 @@ schema = StructType([
     StructField("payload", StringType(), True),
 ])
 
-spark = (
-    SparkSession.builder
-    .appName("EncounterKafkaStream")
-    .config(
-        "spark.jars.packages",
-        "org.apache.spark:spark-sql-kafka-0-10_2.13:4.1.1"
-    )
+spark = SparkSession.builder \
+    .appName("KafkaStream") \
+    .config("spark.jars.packages",
+            "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.1") \
     .getOrCreate()
-)
 
 raw_df = (
     spark.readStream
@@ -46,6 +42,7 @@ query = (
     .option("path", OUTPUT_PATH)
     .option("checkpointLocation", CHECKPOINT)
     .outputMode("append")
+    .trigger(availableNow=True)
     .start()
 )
 

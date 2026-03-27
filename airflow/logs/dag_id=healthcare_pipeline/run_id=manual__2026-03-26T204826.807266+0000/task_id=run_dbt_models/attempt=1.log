@@ -1,0 +1,98 @@
+[2026-03-26T20:55:08.433+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-26T20:55:08.466+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-26T20:48:26.807266+00:00 [queued]>
+[2026-03-26T20:55:08.478+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-26T20:48:26.807266+00:00 [queued]>
+[2026-03-26T20:55:08.479+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-26T20:55:08.499+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_dbt_models> on 2026-03-26 20:48:26.807266+00:00
+[2026-03-26T20:55:08.507+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'healthcare_pipeline', 'run_dbt_models', 'manual__2026-03-26T20:48:26.807266+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/healthcare_pipeline_dag.py', '--cfg-path', '/tmp/tmpj77yh6so']
+[2026-03-26T20:55:08.509+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask run_dbt_models
+[2026-03-26T20:55:08.509+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1087) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-26T20:55:08.510+0000] {standard_task_runner.py:72} INFO - Started process 1088 to run task
+[2026-03-26T20:55:08.558+0000] {task_command.py:467} INFO - Running <TaskInstance: healthcare_pipeline.run_dbt_models manual__2026-03-26T20:48:26.807266+00:00 [running]> on host aba20c4fd3d6
+[2026-03-26T20:55:08.649+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='sanjay' AIRFLOW_CTX_DAG_ID='healthcare_pipeline' AIRFLOW_CTX_TASK_ID='run_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2026-03-26T20:48:26.807266+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-26T20:48:26.807266+00:00'
+[2026-03-26T20:55:08.661+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/utils/utils.py:284 AirflowProviderDeprecationWarning: Call to deprecated class UnknownOperatorAttributeRunFacet. (To be removed in the next release. Make sure to use information from AirflowRunFacet instead.)
+[2026-03-26T20:55:08.669+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/openlineage/plugins/adapter.py:81 DeprecationWarning: Using `from_dict` to set transport is deprecated. Use `config` parameter to fully configure OpenLineageClient.
+[2026-03-26T20:55:08.673+0000] {client.py:110} INFO - OpenLineageClient will use `http` transport
+[2026-03-26T20:55:12.694+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 54f13c1d-03bd-3890-8cd7-46b3fe47dfef
+[2026-03-26T20:55:12.696+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-26T20:55:12.717+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-26T20:55:12.719+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/project/dbt/healthcare_dbt &&         rm -rf target logs dbt_packages &&         dbt run --no-partial-parse --profiles-dir /opt/***/.dbt\n        ']
+[2026-03-26T20:55:12.728+0000] {subprocess.py:99} INFO - Output:
+[2026-03-26T20:55:12.756+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/compiled/healthcare_dbt/models/marts/mart_condition_prevalence.sql': Permission denied
+[2026-03-26T20:55:12.757+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/compiled/healthcare_dbt/models/marts/mart_patient_clinical_summary.sql': Permission denied
+[2026-03-26T20:55:12.757+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/compiled/healthcare_dbt/models/marts/mart_patient_utilization.sql': Permission denied
+[2026-03-26T20:55:12.833+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/run/healthcare_dbt/models/marts/mart_condition_prevalence.sql': Permission denied
+[2026-03-26T20:55:12.834+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/run/healthcare_dbt/models/marts/mart_patient_clinical_summary.sql': Permission denied
+[2026-03-26T20:55:12.834+0000] {subprocess.py:106} INFO - rm: cannot remove 'target/run/healthcare_dbt/models/marts/mart_patient_utilization.sql': Permission denied
+[2026-03-26T20:55:12.879+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-03-26T20:55:12.892+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-26T20:55:16.895+0000] {adapter.py:146} WARNING - Failed to emit OpenLineage event of id 54f13c1d-03bd-3890-8cd7-46b3fe47dfef
+[2026-03-26T20:55:16.897+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=healthcare_pipeline, task_id=run_dbt_models, run_id=manual__2026-03-26T20:48:26.807266+00:00, execution_date=20260326T204826, start_date=20260326T205508, end_date=20260326T205512
+[2026-03-26T20:55:16.930+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-26T20:55:16.932+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 6 for task run_dbt_models (Bash command failed. The command returned a non-zero exit code 1.; 1088)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-26T20:55:16.950+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-03-26T20:55:16.974+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-26T20:55:16.979+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
