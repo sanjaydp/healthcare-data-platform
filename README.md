@@ -191,14 +191,6 @@ This ensures reliability and consistency across deployments.
 
 <img width="1913" height="607" alt="DAG" src="https://github.com/user-attachments/assets/52141677-b3c7-4f72-bb78-00bca1bc16c2" />
 
-<img width="1918" height="937" alt="mar" src="https://github.com/user-attachments/assets/45a19470-31a9-4c2f-b5ad-ce37584f04c5" />
-
-<img width="1429" height="867" alt="image" src="https://github.com/user-attachments/assets/e1b9fc55-35ff-48a9-82e8-ca4db6917c31" />
-
-<img width="1436" height="870" alt="image" src="https://github.com/user-attachments/assets/5f32e00f-f887-4082-8373-36a3265bae6e" />
-
-<img width="1435" height="865" alt="image" src="https://github.com/user-attachments/assets/dfd5112f-3442-414a-8681-88247aca3c8e" />
-
 
 ### Power BI Dashboard
 _Add dashboard screenshot healthcare-data-platform
