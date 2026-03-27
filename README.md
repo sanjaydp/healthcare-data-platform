@@ -34,14 +34,6 @@ flowchart LR
     M --> G
     M --> H
 
-# Healthcare Data Engineering & Analytics Platform
-
-An end-to-end healthcare data platform built using a modern data stack, covering ingestion, orchestration, transformation, data quality, lineage, and CI/CD.
-
-This project simulates a production-style pipeline for healthcare data, designed to demonstrate how real-world data engineering systems are built and operated.
-
----
-
 ## Project Overview
 
 This pipeline processes healthcare encounter data through a layered architecture:
@@ -107,5 +99,99 @@ This pipeline processes healthcare encounter data through a layered architecture
 
 ---
 
+## Data Layers
 
+### Bronze Layer (AWS S3)
+- Stores raw healthcare event data
+- Immutable and source-aligned
+
+### Raw Layer (Snowflake)
+- Structured ingestion of raw data
+- Minimal transformations applied
+
+### Staging Layer (dbt)
+- Data cleaning and standardization
+- Schema alignment and transformations
+
+### Mart Layer (dbt)
+- Business-level aggregated datasets
+- Analytics-ready tables
+
+---
+
+## Orchestration (Airflow)
+
+Airflow manages the end-to-end pipeline:
+
+- Kafka event ingestion
+- Data processing with PySpark
+- Data loading into S3 and Snowflake
+- dbt model execution
+- dbt testing
+- Data quality validation
+- Lineage tracking
+
+Each stage is modular and independently executable.
+
+---
+
+## Data Quality
+
+### Great Expectations
+Used for:
+- Schema validation
+- Null checks
+- Data consistency checks
+
+### dbt Tests
+Used for:
+- Not null constraints
+- Uniqueness checks
+- Referential integrity
+
+---
+
+## Lineage & Observability
+
+OpenLineage is integrated with Airflow and dbt to capture metadata across the pipeline.
+
+Marquez provides visibility into:
+- Job runs
+- Task dependencies
+- Upstream and downstream data flow
+- Pipeline execution tracking
+
+This helps in debugging, monitoring, and governance.
+
+---
+
+## CI/CD (GitHub Actions)
+
+GitHub Actions is used to automate validation and deployment checks:
+
+- DAG validation for Airflow
+- dbt project validation
+- Python dependency checks
+- Docker build verification
+
+This ensures reliability and consistency across deployments.
+
+---
+
+## Screenshots
+
+<img width="1913" height="607" alt="DAG" src="https://github.com/user-attachments/assets/52141677-b3c7-4f72-bb78-00bca1bc16c2" />
+
+
+### Power BI Dashboard
+_Add dashboard screenshot healthcare-data-platform
+
+---
+
+## How to Run
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/sanjaydp/healthcare-data-platform.git
+cd healthcare-data
 
