@@ -206,7 +206,7 @@ This ensures reliability and consistency across deployments.
 ```bash
 git clone https://github.com/sanjaydp/healthcare-data-platform.git
 cd healthcare-data-platform
-
+---
 ## Repository Structure
 
 - `airflow/` - DAGs, logs, plugins, dbt profiles
