@@ -10,27 +10,27 @@ This project was designed to simulate a production-style modern data stack pipel
 
 ```mermaid
 flowchart LR
-    A[Synthea / Healthcare Event Data] --> B[Kafka<br/>Encounter Events]
-    B --> C[Airflow Orchestration]
+    A["Synthea Healthcare Event Data"] --> B["Kafka Encounter Events"]
+    B --> C["Airflow Orchestration"]
 
-    C --> D[PySpark Consumer]
-    D --> E[AWS S3 Bronze Layer]
+    C --> D["PySpark Consumer"]
+    D --> E["AWS S3 Bronze Layer"]
 
-    E --> F[Load to Snowflake Raw Layer]
-    F --> G[dbt Models<br/>Staging / Mart Layer]
-    G --> H[dbt Tests]
+    E --> F["Snowflake Raw Layer"]
+    F --> G["dbt Models Staging and Mart"]
+    G --> H["dbt Tests"]
 
-    E --> I[Great Expectations<br/>Data Validation]
+    E --> I["Great Expectations Data Validation"]
     I --> F
 
-    G --> J[Power BI Dashboard]
+    G --> J["Power BI Dashboard"]
 
-    C --> K[OpenLineage]
+    C --> K["OpenLineage"]
     G --> K
     H --> K
-    K --> L[Marquez<br/>Lineage & Observability]
+    K --> L["Marquez Lineage Observability"]
 
-    M[GitHub Actions CI/CD] --> C
+    M["GitHub Actions CI CD"] --> C
     M --> G
     M --> H
 
@@ -184,6 +184,13 @@ This ensures reliability and consistency across deployments.
 
 <img width="1913" height="607" alt="DAG" src="https://github.com/user-attachments/assets/52141677-b3c7-4f72-bb78-00bca1bc16c2" />
 
+<img width="1918" height="937" alt="mar" src="https://github.com/user-attachments/assets/45a19470-31a9-4c2f-b5ad-ce37584f04c5" />
+
+<img width="1429" height="867" alt="image" src="https://github.com/user-attachments/assets/e1b9fc55-35ff-48a9-82e8-ca4db6917c31" />
+
+<img width="1436" height="870" alt="image" src="https://github.com/user-attachments/assets/5f32e00f-f887-4082-8373-36a3265bae6e" />
+
+<img width="1435" height="865" alt="image" src="https://github.com/user-attachments/assets/dfd5112f-3442-414a-8681-88247aca3c8e" />
 
 ### Power BI Dashboard
 _Add dashboard screenshot healthcare-data-platform
