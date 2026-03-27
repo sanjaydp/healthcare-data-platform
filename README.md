@@ -199,15 +199,159 @@ This ensures reliability and consistency across deployments.
 
 
 ---
-
 ## How to Run
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/sanjaydp/healthcare-data-platform.git
-cd healthcare-data-platform
-```
+### Prerequisites
+
+Ensure the following are installed:
+
+- Docker & Docker Compose
+- Python 3.10+
+- Git
+
 ---
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repo-url>
+cd <repo-name>
+```
+
+---
+
+### 2. Configure Environment Variables
+
+Create a `.env` file in the root directory and add required configurations.
+
+Example:
+
+```env
+# Snowflake Configuration
+SNOWFLAKE_ACCOUNT=your_account
+SNOWFLAKE_USER=your_user
+SNOWFLAKE_PASSWORD=your_password
+SNOWFLAKE_ROLE=your_role
+SNOWFLAKE_WAREHOUSE=your_warehouse
+SNOWFLAKE_DATABASE=your_database
+SNOWFLAKE_SCHEMA=your_schema
+
+# AWS Configuration (if used)
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_DEFAULT_REGION=us-east-1
+```
+
+---
+
+### 3. Start All Services
+
+Build and start all containers:
+
+```bash
+docker compose up --build
+```
+
+Run in detached mode (optional):
+
+```bash
+docker compose up --build -d
+```
+
+---
+
+### 4. Access Services
+
+| Service        | URL                     |
+|----------------|------------------------|
+| Airflow UI     | http://localhost:8080  |
+| Marquez UI     | http://localhost:3000  |
+| Marquez API    | http://localhost:5000  |
+
+#### Airflow Login
+- Username: `airflow`
+- Password: `airflow`
+
+---
+
+### 5. Initialize Airflow (if required)
+
+If Airflow services fail to start:
+
+```bash
+docker compose exec airflow-webserver airflow db init
+```
+
+---
+
+### 6. Trigger the Pipeline
+
+1. Open Airflow UI: http://localhost:8080  
+2. Enable the DAG: `healthcare_pipeline`  
+3. Click **Trigger DAG**
+
+---
+
+### 7. Monitor Pipeline Execution
+
+- Track task execution in Airflow UI
+- Review logs for each task
+- Ensure successful execution of:
+  - Kafka event ingestion
+  - Data processing and S3 upload
+  - Snowflake data loading
+  - dbt model execution
+  - dbt tests
+
+---
+
+### 8. View Data Lineage
+
+- Open Marquez UI: http://localhost:3000  
+- Navigate to namespace: `healthcare-pipeline`  
+- Explore job-level lineage and dependencies
+
+---
+
+### 9. Run dbt Manually (Optional)
+
+Run dbt models:
+
+```bash
+docker exec -it dbt dbt run --project-dir /usr/app/dbt/healthcare_dbt
+```
+
+Run dbt tests:
+
+```bash
+docker exec -it dbt dbt test --project-dir /usr/app/dbt/healthcare_dbt
+```
+
+---
+
+### 10. Stop Services
+
+Stop all running containers:
+
+```bash
+docker compose down
+```
+
+To remove volumes and reset environment:
+
+```bash
+docker compose down -v
+```
+
+---
+
+## Notes
+
+- Kafka is used for event-driven ingestion, while Airflow orchestrates batch processing.
+- dbt transformations are executed within a dedicated container.
+- OpenLineage integration enables lineage tracking across Airflow and dbt.
+- The pipeline follows a layered architecture: Bronze (S3) → Raw (Snowflake) → Staging/Mart (dbt).
+
 ## Repository Structure
 
 - `airflow/` - DAGs, logs, plugins, dbt profiles
