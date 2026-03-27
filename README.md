@@ -33,7 +33,7 @@ flowchart LR
     M["GitHub Actions CI CD"] --> C
     M --> G
     M --> H
-
+```
 ---
 
 ## Project Overview
@@ -192,8 +192,6 @@ This ensures reliability and consistency across deployments.
 
 <img width="1435" height="865" alt="image" src="https://github.com/user-attachments/assets/dfd5112f-3442-414a-8681-88247aca3c8e" />
 
-### Power BI Dashboard
-_Add dashboard screenshot healthcare-data-platform
 
 ---
 
@@ -202,5 +200,5 @@ _Add dashboard screenshot healthcare-data-platform
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/sanjaydp/healthcare-data-platform.git
-cd healthcare-data
+cd healthcare-data-platform
 
